@@ -1,0 +1,26 @@
+{
+  "name": "pink",
+  "version": "0.1.0",
+  "description": "Проект на интенсиве HTML Academy «Профессиональный HTML и CSS, уровень 2»",
+  "author": "Vadim Tiuriumin",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "github:gulpjs/gulp#v4.0.0-alpha.3",
+    "gulp-csso": "^3.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-posthtml": "^3.0.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-svgstore": "^7.0.0",
+    "gulp-webp": "^3.0.0",
+    "posthtml-include": "^1.2.0"
+  }
+}
