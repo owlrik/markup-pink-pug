@@ -1,13 +1,10 @@
 {
   "name": "pink",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Проект на интенсиве HTML Academy «Профессиональный HTML и CSS, уровень 2»",
   "author": "Vadim Tiuriumin",
-  "scripts": {
-    "start": "gulp",
-    "build": "gulp build"
-  },
   "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
     "autoprefixer": "^9.3.1",
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
@@ -21,6 +18,32 @@
     "gulp-sass": "^4.0.2",
     "gulp-svgstore": "^7.0.0",
     "gulp-webp": "^3.0.0",
-    "posthtml-include": "^1.2.0"
-  }
+    "posthtml-include": "^1.2.0",
+    "stylelint": "^9.8.0",
+    "stylelint-config-htmlacademy": "^0.1.1"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "editorconfig": "editorconfig-cli",
+    "test": "npm run editorconfig && npm run stylelint"
+  },
+  "browserList": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.{sass,scss}"
+  ],
+  "engines": {
+    "node": "8.12"
+  },
+  "dependencies": {}
 }
