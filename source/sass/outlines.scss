@@ -1,0 +1,33 @@
+//body {
+//  background: $body-bg url("../img/pink-index-mobile.jpg") no-repeat 50% 0;
+//  background-size: 720px auto;
+//  min-height: 750px;
+//}
+//
+//@media (min-width: $screen-medium) {
+//  body {
+//    background: $body-bg url("../img/pink-index-tablet.jpg") no-repeat 50% 0;
+//    background-size: 1178px auto;
+//  }
+//}
+//
+//@media (min-width: $screen-large) {
+//  body {
+//    background: $body-bg url("../img/pink-index-desktop.jpg") no-repeat 50% 0;
+//    background-size: 1391px auto;
+//  }
+//}
+
+body > * {
+  outline: 2px solid darkblue;
+}
+
+body > * > * {
+  outline: 2px solid lime;
+  outline-offset: -2px;
+}
+
+body > * > * > * {
+  outline: 2px solid orange;
+  outline-offset: -4px;
+}

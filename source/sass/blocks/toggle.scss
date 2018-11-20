@@ -1,0 +1,17 @@
+.toggle {
+  width: 50px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  //background-color: inherit;
+  //border: none;
+  outline: 1px solid yellow;
+}
+
+.toggle::before {
+  //
+}
+
+.toggle::after {
+  //
+}

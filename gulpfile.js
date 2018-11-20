@@ -49,7 +49,7 @@ function images() {
 //}
 
 function sprite() {
-	return gulp.src("source/img/icon-*.svg")
+	return gulp.src("source/img/{icon-*.svg,logo-*.svg}")
 		.pipe(svgstore({
 			inlineSvg: true
 		}))
@@ -103,23 +103,42 @@ exports.clean = clean;
 exports.copy = copy;
 exports.watch = watch;
 
+// gulp.task("build", gulp.series(
+//   clean,
+//   copy,
+//   gulp.parallel(
+// 	style,
+// 	sprite,
+// 	html,
+// 	images)
+// ));
+
+// gulp.task("default", gulp.series(
+//   clean,
+//   copy,
+//   gulp.parallel(
+//     style,
+//     sprite,
+//     html,
+//     images),
+//   gulp.parallel(watch, serve)
+// ));
+
 gulp.task("build", gulp.series(
   clean,
   copy,
-  gulp.parallel(
-	style,
-	sprite,
-	html,
-	images)
+  style,
+  sprite,
+  html,
+  images
 ));
 
 gulp.task("default", gulp.series(
   clean,
   copy,
-  gulp.parallel(
-	style,
-	sprite,
-    html,
-	images),
+  style,
+  sprite,
+  html,
+  images,
   gulp.parallel(watch, serve)
 ));
