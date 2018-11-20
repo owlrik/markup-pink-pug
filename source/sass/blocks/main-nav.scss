@@ -20,13 +20,17 @@
 
 .main-nav__toggle {
   position: absolute;
-  top: -25px; // temp
-  right: 0;
+  top: -65px; // temp
+  right: -20px;
   //z-index: 25;
   //background-color: transparent;
   //border: none;
   //outline: none;
   //transform: translateY(-60%);
+
+  @media (min-width: $screen-medium) {
+    top: -86px;
+  }
 }
 
 .main-nav__toggle::before,
