@@ -1,0 +1,91 @@
+.download-app {  //TODO: подумать насчет флекса
+  //background-color: #1d2631;
+}
+
+.download-app__inner {
+  width: 280px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  outline: 1px solid red; //temp
+
+  @media (min-width: $screen-medium) {
+    width: 620px;
+    padding-bottom: 92px;
+  }
+
+  @media (min-width: $screen-large) {
+    width: 940px;
+    padding-top: 110px;
+    padding-bottom: 103px;
+  }
+}
+
+.download-app__slogan {
+  //TODO: подумать о доступном скрытии для мобильных
+  display: none;
+
+  @media (min-width: $screen-medium) {
+    display: block;
+    width: 300px;
+    margin-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 48px;  //1.2
+    text-align: center;
+  }
+
+  @media (min-width: $screen-large) {
+    margin-bottom: 50px;
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+
+.download-app__button {
+  width: 280px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  outline: 1px solid greenyellow; //temp
+
+  @media (min-width: $screen-medium) {
+    width: 300px;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: $screen-large) {
+    margin-bottom: 53px;
+    font-size: 21px;  // Через модификатор button--download или @media button
+  }
+}
+
+.download-app__platforms {
+  //temp layout
+  max-width: 300px;
+  min-width: 280px;
+  min-height: 58px;
+  margin-bottom: 20px;
+  outline: 1px solid darkblue;  //temp
+
+  @media (min-width: $screen-medium) {
+    margin-bottom: 35px;
+  }
+
+  @media (min-width: $screen-large) {
+    margin-bottom: 55px;
+  }
+}
+
+.download-app__description {
+  width: 280px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: center;
+  outline: 1px solid yellow;  //temp
+
+  @media (min-width: $screen-medium) {
+    width: 300px;
+    font-size: 18px;
+  }
+}

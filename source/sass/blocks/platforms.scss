@@ -1,0 +1,40 @@
+.platforms {
+  //margin: 0;  //TODO: подумать над каскадом с элементом
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.platforms__item {
+  display: inline-block;
+  width: 46.21px;
+  height: 56.75px;
+  margin-right: 30px;
+  vertical-align: top;
+  //temp
+  outline: 1px solid deepskyblue;
+  outline-offset: -1px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.platforms__link {
+  //display: inline-block;
+  //width: 46.21px;
+  //height: 56.75px;
+  //vertical-align: top;
+
+  &--apple {
+    //background-image: url("../img/logo-apple.svg");
+  }
+
+  &--android {
+    //background-image: url("../img/logo-android.svg");
+  }
+
+  &--windows {
+    //background-image: url("../img/logo-microsoft.svg");
+  }
+}
