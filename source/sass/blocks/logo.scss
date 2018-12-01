@@ -4,37 +4,34 @@
 }
 
 .logo__img {
-  display: block;
+  display: none;
+  //temp
   outline: 1px solid yellow;
   outline-offset: -1px;
 
   &--small {
-    //width: 74px;
-    //height: 22px;
+    width: 74px;
+    height: 22px;
 
-    @media (min-width: $screen-medium) {
-      display: none;
+    @media (max-width: $screen-medium - 1) {
+      display: block;
     }
   }
 
   &--medium {
-    display: none;
-    //width: 147px;
-    //height: 40px;
+    //display: none;
+    width: 147px;
+    height: 40px;
 
-    @media (min-width: $screen-medium) {
+    @media (min-width: $screen-medium) and (max-width: $screen-large - 1) {
       display: block;
-    }
-
-    @media (min-width: $screen-large) {
-      display: none;
     }
   }
 
   &--large {
-    display: none;
-    //width: 147px;
-    //height: 40px;
+    //display: none;
+    width: 147px;
+    height: 40px;
 
     @media (min-width: $screen-large) {
       display: block;

@@ -1,0 +1,55 @@
+.research {
+  display: none;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  background-color: #ffffff;
+
+  @media (min-width: $screen-medium) {
+    display: block;
+  }
+}
+
+.research__inner {
+  width: 620px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-left: 300px;
+  // temp
+  outline: 1px solid red;
+
+  @media (min-width: $screen-large) {
+    width: 940px;
+  }
+}
+
+.research__title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: left;
+
+  & br {
+    @media (min-width: $screen-large) {
+      display: none;
+    }
+  }
+}
+
+.research__description {
+  //width: 300px;
+
+  @media (min-width: $screen-large) {
+    font-size: 18px;
+  }
+}
+
+.research__link {
+  //color
+
+  @media (min-width: $screen-large) {
+    font-size: 18px;
+  }
+}

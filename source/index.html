@@ -55,6 +55,7 @@
     <!--download links for the app-->
     <section class="download-app">
       <h2 class="visually-hidden">Ссылки для скачивания приложения</h2>
+
       <div class="download-app__inner">
         <b class="download-app__slogan">Взгляните на жизнь иначе!</b>
 
@@ -112,16 +113,19 @@
       </div>
     </section>
 
+    <!--scientific results-->
     <section class="research">
       <h2 class="visually-hidden">Результаты исследований</h2>
+
       <div class="research__inner">
-        <h3 class="research__title">Эффект на 24 часа!</h3>
+        <h3 class="research__title">Эффект<br> на 24 часа!</h3>
         <p class="research__description">Британские учёные провели исследования и доказали,
           что положительный эффект от использования приложения длится целые сутки!</p>
         <a class="research__link" href="#">Узнать больше об исследовании</a>
       </div>
     </section>
 
+    <!--user's reviews-->
     <section class="reviews">
       <h2 class="visually-hidden">Отзывы пользователей</h2>
 
@@ -152,74 +156,114 @@
             <span class="visually-hidden">Следующий отзыв</span>
           </button>
         </div>
+
+        <!--TODO: подумать над списком-->
         <p class="slider-pagination  reviews__slider-pagination">
-          <button class="slider-pagination__toggle  slider-pagination__toggle--active" type="button">1</button>
-          <button class="slider-pagination__toggle" type="button">2</button>
-          <button class="slider-pagination__toggle" type="button">3</button>
+          <a class="slider-pagination__toggle  slider-pagination__toggle--active" href="#">
+            <span class="visually-hidden">1</span>
+          </a>
+          <a class="slider-pagination__toggle" href="#">
+            <span class="visually-hidden">2</span>
+          </a>
+          <a class="slider-pagination__toggle" href="#">
+            <span class="visually-hidden">3</span>
+          </a>
         </p>
       </div>
     </section>
 
+    <!--user's plans-->
     <section class="price">
       <h2 class="visually-hidden">Тарифные планы</h2>
 
-      <table class="price-table">
-        <thead class="price-table__header">
-          <tr>
-            <th class="price-table__cell-header  price-table__cell-header--empty"></th>
-            <th class="price-table__cell-header">
-              <p class="price-table__title">База</p>
-              <p class="price-table__cost">1,99 USD</p>
-            </th>
-            <th class="price-table__cell-header  price-table__cell-header--hit">
-              <p class="price-table__title">Стандарт</p>
-              <p class="price-table__cost">3,99 USD</p>
-            </th>
-            <th class="price-table__cell-header">
-              <p class="price-table__title">Анлим</p>
-              <p class="price-table__cost">9,99 USD</p>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="price-table__cell  price-table__cell--service">Розовый фильтр</td>
-            <td class="price-table__cell  price-table__cell--yes"><span>Есть</span></td>
-            <td class="price-table__cell  price-table__cell--yes"><span>Есть</span></td>
-            <td class="price-table__cell  price-table__cell--yes"><span>Есть</span></td>
-          </tr>
-          <tr>
-            <td class="price-table__cell  price-table__cell--service">Смайлики</td>
-            <td class="price-table__cell  price-table__cell--no"><span>Нет</span></td>
-            <td class="price-table__cell  price-table__cell--yes"><span>Есть</span></td>
-            <td class="price-table__cell  price-table__cell--yes"><span>Есть</span></td>
-          </tr>
-          <tr>
-            <td class="price-table__cell  price-table__cell--service">Комментарии</td>
-            <td class="price-table__cell  price-table__cell--no"><span>Нет</span></td>
-            <td class="price-table__cell  price-table__cell--no"><span>Нет</span></td>
-            <td class="price-table__cell  price-table__cell--yes"><span>Есть</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="slider-pagination  price__slider-pagination">
-        <button class="slider-pagination__toggle"  type="button">1</button>
-        <button class="slider-pagination__toggle  slider-pagination__toggle--active" type="button">2</button>
-        <button class="slider-pagination__toggle" type="button">3</button>
-      </p>
+        <table class="price-table">
+          <thead class="price-table__header">
+            <tr>
+              <th class="price-table__cell-header  price-table__cell-header--empty"></th>
+              <th class="price-table__cell-header">
+                <p class="price-table__title">База</p>
+                <p class="price-table__cost">1,99 USD</p>
+              </th>
+              <th class="price-table__cell-header  price-table__cell-header--hit">
+                <p class="price-table__title">Стандарт</p>
+                <p class="price-table__cost">3,99 USD</p>
+              </th>
+              <th class="price-table__cell-header">
+                <p class="price-table__title">Анлим</p>
+                <p class="price-table__cost">9,99 USD</p>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="price-table__cell  price-table__cell--option">Розовый фильтр</td>
+              <td class="price-table__cell  price-table__cell--yes">
+                <span>Розовый фильтр</span>
+                <span class="visually-hidden">Есть</span>
+              </td>
+              <td class="price-table__cell  price-table__cell--yes">
+                <span>Розовый фильтр</span>
+                <span class="visually-hidden">Есть</span>
+              </td>
+              <td class="price-table__cell  price-table__cell--yes">
+                <span>Розовый фильтр</span>
+                <span class="visually-hidden">Есть</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="price-table__cell  price-table__cell--option">Смайлики</td>
+              <td class="price-table__cell  price-table__cell--no">
+                <span>Смайлики</span>
+                <span class="visually-hidden">Нет</span>
+              </td>
+              <td class="price-table__cell  price-table__cell--yes">
+                <span>Смайлики</span>
+                <span class="visually-hidden">Есть</span>
+              </td>
+              <td class="price-table__cell  price-table__cell--yes">
+                <span>Смайлики</span>
+                <span class="visually-hidden">Есть</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="price-table__cell  price-table__cell--option">Комментарии</td>
+              <td class="price-table__cell  price-table__cell--no">
+                <span>Комментарии</span>
+                <span class="visually-hidden">Нет</span>
+              </td>
+              <td class="price-table__cell  price-table__cell--no">
+                <span>Комментарии</span>
+                <span class="visually-hidden">Нет</span>
+              </td>
+              <td class="price-table__cell  price-table__cell--yes">
+                <span>Комментарии</span>
+                <span class="visually-hidden">Есть</span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+          <p class="slider-pagination  price__slider-pagination">
+            <button class="slider-pagination__toggle"  type="button">1</button>
+            <button class="slider-pagination__toggle  slider-pagination__toggle--active" type="button">2</button>
+            <button class="slider-pagination__toggle" type="button">3</button>
+          </p>
     </section>
 
+    <!--contact info-->
     <section class="contacts">
       <h2 class="visually-hidden">Наши контакты</h2>
 
       <div class="contacts__inner">
-        <p class="contacts__intro">Остались вопросы? Свяжитесь с нами!</p>
+        <p class="intro  contacts__intro">Остались вопросы? Свяжитесь с нами!</p>
+
         <ul class="contacts__list">
           <li class="contacts__item">
             <h3 class="contacts__item-title">Звоните:</h3>
             <a class="contacts__link" href="tel:+78125556666">+7 (812) 555-66-66</a>
           </li>
-          <li class="contacts__item">
+          <li class="contacts__item  contacts__item--mail">
             <h3 class="contacts__item-title">Пишите:</h3>
             <a class="contacts__link" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
           </li>
@@ -229,29 +273,41 @@
           </li>
         </ul>
       </div>
+
+      <!--map-->
       <div class="contacts__map"></div>
     </section>
   </main>
 
-  <footer class="page-footer">
+  <!--page footer-->
+  <footer class="page-footer  page-footer--hidden">
     <div class="page-footer__inner">
       <a class="logo  page-footer__logo">
-        <img class="logo__image" src="http://placehold.it/75x22.png" width="75" height="22" alt="Pink">
+        <svg class="logo__img  logo__img--medium  logo__img--blue" width="147" height="40">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-blue-mobile"></use>
+        </svg>
+        <svg class="logo__img  logo__img--large  logo__img--blue" width="147" height="40">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-blue-desktop"></use>
+        </svg>
       </a>
+
       <section class="social  page-footer__social">
         <h2 class="visually-hidden">Ищите нас в соцсетях!</h2>
         <ul class="social__list">
           <li class="social__item">
-            <a class="social__link  social_link--twitter" href="#"><span class="visually-hidden">Twitter</span></a>
+            <a class="social__link  social__link--twitter" href="#">
+              <span class="visually-hidden">Twitter</span>
+            </a>
           </li>
           <li class="social__item">
-            <a class="social__link  social_link--facebook" href="#"><span class="visually-hidden">Facebook</span>></a>
+            <a class="social__link  social__link--facebook" href="#"><span class="visually-hidden">Facebook</span></a>
           </li>
           <li class="social__item">
-            <a class="social__link  social_link--youtube" href="#"><span class="visually-hidden">YouTube</span>></a>
+            <a class="social__link  social__link--youtube" href="#"><span class="visually-hidden">YouTube</span></a>
           </li>
         </ul>
       </section>
+
       <section class="copyright  page-footer__copyright">
         <p class="copyright__text">
           Разработано

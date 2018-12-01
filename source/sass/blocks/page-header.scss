@@ -21,7 +21,7 @@
 }
 
 .page-header__logo {
-  padding-top: 22px;
+  padding-top: 22px;  // TODO: подумать над перенесением в logo
   padding-bottom: 22px;
 
   @media (min-width: $screen-medium) {

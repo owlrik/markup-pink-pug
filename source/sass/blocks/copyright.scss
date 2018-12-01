@@ -1,0 +1,21 @@
+.copyright {
+  text-align: center;
+}
+
+.copyright__text {
+  font-size: 14px;
+  line-height: 18px;
+
+  @media (min-width: $screen-large) {
+    font-size: 18px;
+  }
+}
+
+.copyright__link {
+  display: inline-block;
+  width: 27px;
+  height: 34px;
+  vertical-align: middle;
+  //temp
+  outline: 1px solid violet;
+}

@@ -1,0 +1,88 @@
+.contacts {
+  //
+}
+
+.contacts__inner {
+  width: 280px;
+  margin: 0 auto;
+  //temp
+  outline: 1px solid red;
+
+  @media (min-width: $screen-medium) {
+    width: 620px;
+  }
+
+  @media (min-width: $screen-large) {
+    width: 940px;
+  }
+}
+
+.contacts__intro {
+  margin-bottom: 34px;
+
+  @media (min-width: $screen-medium) {
+    width: 500px;
+    margin: 0 auto 42px;
+  }
+
+  @media (min-width: $screen-large) {
+    margin: 0 auto 56px;
+  }
+}
+
+.contacts__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+
+  @media (min-width: $screen-medium) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  @media (min-width: $screen-large) {
+    //justify-content: space-between;
+  }
+}
+
+.contacts__item {
+  line-height: 1.4;
+
+  @media (min-width: $screen-medium) {
+    width: 280px;
+    margin-bottom: 45px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--mail {
+    //
+    @media (min-width: $screen-large) {
+      order: 1; //TODO: order vs align-self
+    }
+  }
+}
+
+.contacts__item-title {
+  margin-bottom: 0;
+  font-size: 18px;
+
+  @media (min-width: $screen-medium) {
+    margin-top: 0;  //или убрать их сразу
+  }
+
+  @media (min-width: $screen-large) {
+    margin-bottom: 20px;
+  }
+}
+
+.contacts__link {
+  font-weight: 300;
+  font-size: 24px;
+  text-decoration: none;
+}

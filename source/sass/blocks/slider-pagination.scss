@@ -1,0 +1,28 @@
+.slider-pagination {
+  //
+
+  @media (min-width: $screen-large) {
+    display: none;
+  }
+}
+
+.slider-pagination__toggle {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 15px;
+  vertical-align: middle;
+  background-color: grey; //temp
+  border-radius: 50%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--active {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border: 3px solid #000000;
+  }
+}

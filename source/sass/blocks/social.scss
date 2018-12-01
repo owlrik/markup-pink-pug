@@ -1,0 +1,26 @@
+.social {
+  //
+}
+
+.social__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  //temp
+  outline: 1px solid blue;
+}
+
+.social__item {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  vertical-align: top;
+  //temp
+  outline: 1px solid deepskyblue;
+  outline-offset: -1px;
+}
+
+.social__link {
+  //
+}

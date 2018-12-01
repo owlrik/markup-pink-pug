@@ -7,7 +7,7 @@
   text-align: center;
   text-transform: uppercase;
   //background-color: #283645;
-  outline: 1px solid darkblue;
+  outline: 1px solid darkblue;  //temp
   //outline-offset: -1px;
 
   @media (min-width: $screen-large) {
@@ -56,7 +56,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid #000000;
+  border-top: 1px solid #000000; //TODO: перенести свойство в пункты меню
+  //temp
   outline: 1px solid deepskyblue;
   outline-offset: -1px;
 
