@@ -53,15 +53,15 @@
     <h1 class="visually-hidden">Pink – приложение для раскраски серых будней</h1>
 
     <!--download links for the app-->
-    <section class="download-app">
+    <section class="intro  intro--main">
       <h2 class="visually-hidden">Ссылки для скачивания приложения</h2>
 
-      <div class="download-app__inner">
-        <b class="download-app__slogan">Взгляните на жизнь иначе!</b>
+      <div class="intro__inner">
+        <b class="intro__slogan">Взгляните на жизнь иначе!</b>
 
-        <a class="button  download-app__button" href="#">Скачать приложение</a>
+        <a class="button  intro__button" href="#">Скачать приложение</a>
 
-        <ul class="platforms  download-app__platforms">
+        <ul class="platforms  intro__platforms">
           <li class="platforms__item">
             <a class="platforms__link  platforms__link--apple" href="#">
               <span class="visually-hidden">Ссылка на Apple Store</span>
@@ -79,19 +79,21 @@
           </li>
         </ul>
 
-        <p class="download-app__description">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+        <p class="intro__description">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
       </div>
     </section>
 
     <!--features-->
     <section class="features">
-      <h2 class="visually-hidden">Особенности приложения</h2>
+      <header class="features__header">
+        <h2 class="visually-hidden">Особенности приложения</h2>
+        <p class="call-to-action">Устали от серости мегаполиса?<br>
+          Нам есть, что вам предложить!</p>
+      </header>
 
       <div class="features__inner">
-        <section class="intro  features__intro">
-          <p class="intro__text">Устали от серости мегаполиса?</p>
-          <p class="intro__text">Нам есть, что вам<br> предложить!</p>
-        </section>
+        <!--<p class="call-to-action">Устали от серости мегаполиса?<br>-->
+          <!--Нам есть, что вам предложить!</p>-->
 
         <ul class="features__list">
           <li class="features__item  features__item--monochrome">
@@ -159,6 +161,7 @@
 
         <!--TODO: подумать над списком-->
         <p class="slider-pagination  reviews__slider-pagination">
+          <!--TODO: ссылки или кнопки (изначально были кнопки)-->
           <a class="slider-pagination__toggle  slider-pagination__toggle--active" href="#">
             <span class="visually-hidden">1</span>
           </a>
@@ -256,7 +259,7 @@
       <h2 class="visually-hidden">Наши контакты</h2>
 
       <div class="contacts__inner">
-        <p class="intro  contacts__intro">Остались вопросы? Свяжитесь с нами!</p>
+        <p class="call-to-action  contacts__call-to-action">Остались вопросы? Свяжитесь с нами!</p>
 
         <ul class="contacts__list">
           <li class="contacts__item">
@@ -283,6 +286,7 @@
   <footer class="page-footer  page-footer--hidden">
     <div class="page-footer__inner">
       <a class="logo  page-footer__logo">
+        <!--TODO: стилизация контекстом от .page-footer .logo__img--medium VS стилизация svg в модификаторе .logo__img--blue-->
         <svg class="logo__img  logo__img--medium  logo__img--blue" width="147" height="40">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-blue-mobile"></use>
         </svg>
