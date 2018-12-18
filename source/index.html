@@ -13,23 +13,25 @@
   </div>
 
   <!--page header-->
-  <header class="page-header">
-    <div class="page-header__inner">
+  <header class="page-header  page-header--home">
 
-      <a class="logo  page-header__logo">
-        <svg class="logo__img  logo__img--small" width="74" height="22">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-mobile"></use>
-        </svg>
-        <svg class="logo__img  logo__img--medium" width="147" height="40">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-tablet"></use>
-        </svg>
-        <svg class="logo__img  logo__img--large" width="147" height="40">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-desktop"></use>
-        </svg>
-      </a>
+    <nav class="main-nav  main-nav--closed  main-nav--no-js">
+      <div class="main-nav__top">
 
-      <nav class="main-nav  main-nav--closed  main-nav--no-js">
-        <button class="toggle  main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <a class="logo  main-nav__logo">
+          <svg class="logo__img  logo__img--small" width="74" height="22">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-mobile"></use>
+          </svg>
+          <svg class="logo__img  logo__img--medium" width="147" height="40">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-tablet"></use>
+          </svg>
+          <svg class="logo__img  logo__img--large" width="147" height="40">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-desktop"></use>
+          </svg>
+        </a>
+
+        <button class="trigger  main-nav__trigger" type="button"><span class="visually-hidden">Открыть меню</span></button>
+
         <ul class="main-nav__list">
           <li class="main-nav__item">
             <a class="main-nav__link  main-nav__link--active">Главная</a>
@@ -44,75 +46,102 @@
             <a class="main-nav__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
           </li>
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
+
+    <!--download links for the app-->
+    <section class="intro  intro--home  page-header__intro  page-header__intro--home">
+      <h2 class="visually-hidden">Ссылки для скачивания приложения</h2>
+
+        <div class="intro__inner">
+          <b class="intro__slogan">Взгляните на жизнь иначе!</b>
+
+          <!--TODO: возможно добавить модификатор для .button, абсолютную ширину указать в элементе (универсальность .button)-->
+          <a class="button  intro__button" href="#">Скачать приложение</a>
+
+          <ul class="platforms  intro__platforms">
+            <li class="platforms__item">
+              <a class="platforms__link  platforms__link--apple" href="#">
+                <span class="visually-hidden">Ссылка на Apple Store</span>
+              </a>
+            </li>
+            <li class="platforms__item">
+              <a class="platforms__link  platforms__link--android" href="#">
+                <span class="visually-hidden">Ссылка на Google Play</span>
+              </a>
+            </li>
+            <li class="platforms__item">
+              <a class="platforms__link  platforms__link--microsoft" href="#">
+                <span class="visually-hidden">Ссылка на Windows Store</span>
+              </a>
+            </li>
+          </ul>
+
+        <p class="intro__description">Доступно для iPhone, iPad, Android, Windows Phone, OS&nbsp;X, Windows&nbsp;8</p>
+      </div>
+    </section>
   </header>
 
   <!--main content-->
   <main class="page-main">
     <h1 class="visually-hidden">Pink – приложение для раскраски серых будней</h1>
 
-    <!--download links for the app-->
-    <section class="intro  intro--main">
-      <h2 class="visually-hidden">Ссылки для скачивания приложения</h2>
-
-      <div class="intro__inner">
-        <b class="intro__slogan">Взгляните на жизнь иначе!</b>
-
-        <a class="button  intro__button" href="#">Скачать приложение</a>
-
-        <ul class="platforms  intro__platforms">
-          <li class="platforms__item">
-            <a class="platforms__link  platforms__link--apple" href="#">
-              <span class="visually-hidden">Ссылка на Apple Store</span>
-            </a>
-          </li>
-          <li class="platforms__item">
-            <a class="platforms__link  platforms__link--android" href="#">
-              <span class="visually-hidden">Ссылка на Google Play</span>
-            </a>
-          </li>
-          <li class="platforms__item">
-            <a class="platforms__link  platforms__link--microsoft" href="#">
-              <span class="visually-hidden">Ссылка на Windows Store</span>
-            </a>
-          </li>
-        </ul>
-
-        <p class="intro__description">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
-      </div>
-    </section>
-
     <!--features-->
     <section class="features">
       <header class="features__header">
-        <h2 class="visually-hidden">Особенности приложения</h2>
-        <p class="call-to-action">Устали от серости мегаполиса?<br>
-          Нам есть, что вам предложить!</p>
+        <!--TODO: подумать о переименовании элемента/блока-->
+        <div class="container  features__container">
+          <h2 class="visually-hidden">Особенности приложения</h2>
+          <p class="call-to-action  features__call-to-action">
+            <span class="call-to-action__text">Устали от&nbsp;серости мегаполиса?</span>
+            <span class="call-to-action__text">Нам есть, что вам<br> предложить!</span>
+          </p>
+        </div>
       </header>
 
-      <div class="features__inner">
-        <!--<p class="call-to-action">Устали от серости мегаполиса?<br>-->
-          <!--Нам есть, что вам предложить!</p>-->
+      <div class="features__wrap">
+        <div class="features__inner">
 
-        <ul class="features__list">
-          <li class="features__item  features__item--monochrome">
-            <h3 class="features__title">Поднимает настроение</h3>
-            <p class="features__description">Приложение позволит вам победить осеннюю хандру и депрессию
-              буквально в несколько кликов!</p>
-          </li>
-          <li class="features__item  features__item--colorful">
-            <h3 class="features__title">Меняет мир вокруг</h3>
-            <p class="features__description">Сделайте снимок и украсьте его смайликом или текстовой подписью,
-              чтобы усилить эффект</p>
-          </li>
-          <li class="features__item  features__item--smile">
-            <h3 class="features__title">Заводит новых друзей</h3>
-            <p class="features__description">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и
-              заводите новых</p>
-          </li>
-        </ul>
+          <ul class="features__list">
+            <li class="features__item  features__item--monochrome">
+              <div class="features__text">
+                <h3 class="features__title">Поднимает настроение</h3>
+                <p class="features__description">Приложение позволит вам победить осеннюю хандру и&nbsp;депрессию
+                  буквально в несколько кликов!</p>
+              </div>
+              <picture>
+                <source media="(min-width: 960px)" srcset="img/iphone-screen-1-desktop@1x.png 1x, img/iphone-screen-1-desktop@2x.png 2x">
+                <source media="(min-width: 660px)" srcset="img/iphone-screen-1-tablet@1x.png 1x, img/iphone-screen-1-tablet@2x.png 2x">
+                <img class="features__img" src="img/iphone-screen-mobile@1x.png" srcset="img/iphone-screen-mobile@2x.png 2x" alt="Скучная серая фотография">
+              </picture>
+            </li>
+            <li class="features__item  features__item--colorful">
+              <div class="features__text">
+                <h3 class="features__title">Меняет мир вокруг</h3>
+                <p class="features__description">Сделайте снимок и&nbsp;украсьте его смайликом или текстовой подписью,
+                  чтобы усилить&nbsp;эффект</p>
+              </div>
+              <picture>
+                <source media="(min-width: 960px)" srcset="img/iphone-screen-2-desktop@1x.png 1x, img/iphone-screen-2-desktop@2x.png 2x">
+                <source media="(min-width: 660px)" srcset="img/iphone-screen-2-tablet@1x.png 1x, img/iphone-screen-2-tablet@2x.png 2x">
+                <img class="features__img" src="img/iphone-screen-mobile@1x.png" srcset="img/iphone-screen-mobile@2x.png 2x" alt="Освежающий розовый фильтр на фотографии">
+              </picture>
+            </li>
+            <li class="features__item  features__item--smile">
+              <div class="features__text">
+                <h3 class="features__title">Заводит новых друзей</h3>
+                <p class="features__description">Ставьте лайки, комментируйте, делитесь фотографиями с&nbsp;друзьями и&nbsp;заводите новых</p>
+              </div>
+              <picture>
+                <source media="(min-width: 960px)" srcset="img/iphone-screen-3-desktop@1x.png 1x, img/iphone-screen-3-desktop@2x.png 2x">
+                <source media="(min-width: 660px)" srcset="img/iphone-screen-3-tablet@1x.png 1x, img/iphone-screen-3-tablet@2x.png 2x">
+                <img class="features__img" src="img/iphone-screen-mobile@1x.png" srcset="img/iphone-screen-mobile@2x.png 2x" alt="Смайлик и подпись поверх фильтра на фотографии">
+              </picture>
+            </li>
+          </ul>
+        </div>
       </div>
+
     </section>
 
     <!--scientific results-->
@@ -151,10 +180,10 @@
             <p class="reviews__text">&laquo;Это приложение перевернуло мой мир и позволило по-новому взглянуть на
               привычные серые вещи! А ещё я познакомился со своей будущей женой в комментариях к выложенной фотографии!&raquo;</p>
           </blockquote>
-          <button class="reviews__toggle  reviews__toggle--left  slider__prev" type="button">
+          <button class="reviews__trigger  reviews__trigger--left  slider__prev" type="button">
             <span class="visually-hidden">Предыдущий отзыв</span>
           </button>
-          <button class="reviews__toggle  reviews__toggle--right  slider__next" type="button">
+          <button class="reviews__trigger  reviews__trigger--right  slider__next" type="button">
             <span class="visually-hidden">Следующий отзыв</span>
           </button>
         </div>
@@ -162,13 +191,13 @@
         <!--TODO: подумать над списком-->
         <p class="slider-pagination  reviews__slider-pagination">
           <!--TODO: ссылки или кнопки (изначально были кнопки)-->
-          <a class="slider-pagination__toggle  slider-pagination__toggle--active" href="#">
+          <a class="slider-pagination__trigger  slider-pagination__trigger--active" href="#">
             <span class="visually-hidden">1</span>
           </a>
-          <a class="slider-pagination__toggle" href="#">
+          <a class="slider-pagination__trigger" href="#">
             <span class="visually-hidden">2</span>
           </a>
-          <a class="slider-pagination__toggle" href="#">
+          <a class="slider-pagination__trigger" href="#">
             <span class="visually-hidden">3</span>
           </a>
         </p>
@@ -248,9 +277,9 @@
           </table>
 
           <p class="slider-pagination  price__slider-pagination">
-            <button class="slider-pagination__toggle"  type="button">1</button>
-            <button class="slider-pagination__toggle  slider-pagination__toggle--active" type="button">2</button>
-            <button class="slider-pagination__toggle" type="button">3</button>
+            <button class="slider-pagination__trigger"  type="button">1</button>
+            <button class="slider-pagination__trigger  slider-pagination__trigger--active" type="button">2</button>
+            <button class="slider-pagination__trigger" type="button">3</button>
           </p>
     </section>
 
@@ -322,5 +351,21 @@
       </section>
     </div>
   </footer>
+
+  <script>
+    var navMain = document.querySelector('.main-nav');
+    var navTrigger = document.querySelector('.main-nav__trigger');
+
+    navMain.classList.remove('main-nav--no-js');
+    navTrigger.addEventListener('click', function () {
+      if (navMain.classList.contains('main-nav--closed')) {
+        navMain.classList.remove('main-nav--closed');
+        navMain.classList.add('main-nav--opened');
+      } else {
+        navMain.classList.add('main-nav--closed');
+        navMain.classList.remove('main-nav--opened');
+      }
+    });
+  </script>
 </body>
 </html>

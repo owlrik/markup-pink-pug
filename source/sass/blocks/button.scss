@@ -13,10 +13,14 @@
   text-decoration: none;
   text-transform: none;
   text-align: center;
-  border: 3px solid yellow; //temp color $var
+  border: 3px solid #ffffff; //temp color $var
   border-radius: 27px;  //$var
   background-color: transparent; //temp $var
   background-image: none;
   box-sizing: border-box;
   cursor: pointer;
+
+  @media (min-width: $screen-large) {
+    font-size: 21px;
+  }
 }

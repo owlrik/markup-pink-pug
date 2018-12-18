@@ -1,13 +1,15 @@
-.toggle {
+.trigger {
   display: block;
   width: 90px;
-  height: 65px;
+  height: 66px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   //background-color: inherit;
-  //temp
-  outline: 1px solid yellow;
+
+  @media (min-width: $screen-large) {
+    display: none;
+  }
 
   &::before {
     content: "";
@@ -46,6 +48,6 @@
   }
 }
 
-.toggle::after {
+.trigger::after {
   //
 }

@@ -1,5 +1,8 @@
 .platforms {
   //margin: 0;  //TODO: подумать над каскадом с элементом
+  //display: flex;
+  //flex-direction: row;
+  //justify-content: space-between;
   padding: 0;
   list-style: none;
   text-align: center;
@@ -11,9 +14,6 @@
   height: 56.75px;
   margin-right: 30px;
   vertical-align: top;
-  //temp
-  outline: 1px solid deepskyblue;
-  outline-offset: -1px;
 
   &:last-child {
     margin-right: 0;
@@ -21,20 +21,22 @@
 }
 
 .platforms__link {
-  //display: inline-block;
-  //width: 46.21px;
-  //height: 56.75px;
-  //vertical-align: top;
+  display: inline-block;
+  width: 46.21px;
+  height: 56.75px;
+  vertical-align: top;
+  background-position: center bottom;
+  background-repeat: no-repeat;
 
   &--apple {
-    //background-image: url("../img/logo-apple.svg");
+    background-image: url("../img/logo-apple.svg");
   }
 
   &--android {
-    //background-image: url("../img/logo-android.svg");
+    background-image: url("../img/logo-android.svg");
   }
 
-  &--windows {
-    //background-image: url("../img/logo-microsoft.svg");
+  &--microsoft {
+    background-image: url("../img/logo-microsoft.svg");
   }
 }

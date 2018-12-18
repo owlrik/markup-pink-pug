@@ -1,13 +1,15 @@
 .logo {
-  display: block;
-  outline: 1px solid greenyellow;
+  display: flex;
+  height: 66px;
+
+  @media (min-width: $screen-medium) {
+    height: 110px;
+  }
 }
 
 .logo__img {
   display: none;
-  //temp
-  outline: 1px solid yellow;
-  outline-offset: -1px;
+  margin: auto 0;
 
   &--small {
     width: 74px;
@@ -19,9 +21,9 @@
   }
 
   &--medium {
-    //display: none;
     width: 147px;
     height: 40px;
+    margin: 27px 0 43px;
 
     @media (min-width: $screen-medium) and (max-width: $screen-large - 1) {
       display: block;
@@ -29,9 +31,9 @@
   }
 
   &--large {
-    //display: none;
     width: 147px;
     height: 40px;
+    margin: 27px 0 43px;
 
     @media (min-width: $screen-large) {
       display: block;

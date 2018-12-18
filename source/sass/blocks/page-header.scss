@@ -1,31 +1,54 @@
 .page-header {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.page-header__inner {
-  display: flex;
-  width: 280px;
-  margin: 0 auto;
-  flex-direction: column;
-  outline: 1px solid red; // temp
+  min-height: 66px;
+  color: #ffffff;
+  background-color: #283645;
+  background-image: url("../img/bg-back-mobile@1x.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
 
   @media (min-width: $screen-medium) {
-    width: 620px;
+    min-height: 110px;
+    background-image: url("../img/bg-back-tablet@1x.jpg");
   }
 
   @media (min-width: $screen-large) {
-    width: 940px;
-    flex-direction: row;
-    justify-content: space-between;
+    background-image: url("../img/bg-back-desktop@1x.jpg");
+  }
+
+  &--home {
+    background-image:
+      url("../img/iphone-hand-mobile@1x.png"),
+      url("../img/bg-back-mobile@1x.jpg");
+    background-position: calc(50% - 30px) 176px, center top;
+
+    @media (min-width: $screen-medium) {
+      background-image:
+        url("../img/iphone-hand-tablet@1x.png"),
+        url("../img/bg-back-tablet@1x.jpg");
+      background-position: 50% 100%, center top;
+    }
+
+    @media (min-width: $screen-large) {
+      background-image:
+        url("../img/iphone-hand-desktop@1x.png"),
+        url("../img/bg-back-desktop@1x.jpg");
+      background-position: calc(50% + 70px) 100%, center top;
+    }
   }
 }
 
-.page-header__logo {
-  padding-top: 22px;  // TODO: подумать над перенесением в logo
-  padding-bottom: 22px;
+.page-header__intro {
+  margin-top: 0;
 
-  @media (min-width: $screen-medium) {
-    padding-top: 28px;
-    padding-bottom: 42px;
+  &--home {
+    margin-top: 396px;
+
+    @media (min-width: $screen-medium) {
+      margin-top: 95px;
+    }
+
+    @media (min-width: $screen-large) {
+      margin-top: 110px;
+    }
   }
 }

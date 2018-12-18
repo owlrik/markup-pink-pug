@@ -13,10 +13,14 @@
   }
 }
 
-//.intro__text {
-//  margin-bottom: 30px;
-//
-//  @media (min-width: $screen-medium) {
-//    margin: 0;
-//  }
-//}
+.call-to-action__text {
+  display: block;
+}
+
+.call-to-action__text:first-child {
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-medium) {
+    margin: 0;
+  }
+}
