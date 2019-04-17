@@ -162,47 +162,61 @@
     <section class="reviews">
       <h2 class="visually-hidden">Отзывы пользователей</h2>
 
-      <div class="reviews__inner  slider">
-        <div class="reviews__list  slider__list">
-          <blockquote class="reviews__item  slider__item">
-            <cite class="reviews__author-name">Николай Петров</cite>
-            <p class="reviews__author-info">25 лет, водитель трамвая</p>
-            <p class="reviews__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на
-              привычные серые вещи! А ещё я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
-          </blockquote>
-          <blockquote class="reviews__item  slider__item">
-            <cite class="reviews__author-name">Всеволод Кузнецов</cite>
-            <p class="reviews__author-info">35 лет, водитель троллейбуса</p>
-            <p class="reviews__text">&laquo;Это приложение перевернуло мой мир и позволило по-новому взглянуть на
-              привычные серые вещи! А ещё я познакомился со своей будущей женой в комментариях к выложенной фотографии!&raquo;</p>
-          </blockquote>
-          <blockquote class="reviews__item  slider__item">
-            <cite class="reviews__author-name">Александр Домогаров</cite>
-            <p class="reviews__author-info">55 лет, водитель трамвая</p>
-            <p class="reviews__text">&laquo;Это приложение перевернуло мой мир и позволило по-новому взглянуть на
-              привычные серые вещи! А ещё я познакомился со своей будущей женой в комментариях к выложенной фотографии!&raquo;</p>
-          </blockquote>
-          <button class="reviews__trigger  reviews__trigger--left  slider__prev" type="button">
+      <div class="slider  reviews__slider">
+
+        <div class="slider__togglers">
+          <button class="slider__toggler  slider__toggler--prev  button-image  button-image--arrow  button-image--flip" type="button" disabled>
+            <svg width="22" height="41">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-review-arrow-left"></use>
+            </svg>
             <span class="visually-hidden">Предыдущий отзыв</span>
           </button>
-          <button class="reviews__trigger  reviews__trigger--right  slider__next" type="button">
+
+          <button class="slider__toggler  slider__toggler--next  button-image  button-image--arrow" type="button">
+            <svg width="22" height="41">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-review-arrow-right"></use>
+            </svg>
             <span class="visually-hidden">Следующий отзыв</span>
           </button>
         </div>
 
-        <!--TODO: подумать над списком-->
-        <p class="slider-pagination  reviews__slider-pagination">
-          <!--TODO: ссылки или кнопки (изначально были кнопки)-->
-          <a class="slider-pagination__trigger  slider-pagination__trigger--active" href="#">
-            <span class="visually-hidden">1</span>
-          </a>
-          <a class="slider-pagination__trigger" href="#">
-            <span class="visually-hidden">2</span>
-          </a>
-          <a class="slider-pagination__trigger" href="#">
-            <span class="visually-hidden">3</span>
-          </a>
-        </p>
+        <div class="slider__overflow-wrap">
+
+          <div class="reviews__list  slider__inner">
+            <blockquote class="reviews__item  slider__item">
+              <cite class="reviews__author-name">Николай Петров</cite>
+              <p class="reviews__author-info">25 лет, водитель трамвая</p>
+              <p class="reviews__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на
+                привычные серые вещи! А ещё я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+            </blockquote>
+
+            <blockquote class="reviews__item  slider__item">
+              <cite class="reviews__author-name">Всеволод Кузнецов</cite>
+              <p class="reviews__author-info">35 лет, водитель троллейбуса</p>
+              <p class="reviews__text">&laquo;Это приложение перевернуло мой мир и позволило по-новому взглянуть на
+                привычные серые вещи! А ещё я познакомился со своей будущей женой в комментариях к выложенной фотографии!&raquo;</p>
+            </blockquote>
+
+            <blockquote class="reviews__item  slider__item">
+              <cite class="reviews__author-name">Александр Домогаров</cite>
+              <p class="reviews__author-info">55 лет, водитель трамвая</p>
+              <p class="reviews__text">&laquo;Это приложение перевернуло мой мир и позволило по-новому взглянуть на
+                привычные серые вещи! А ещё я познакомился со своей будущей женой в комментариях к выложенной фотографии!&raquo;</p>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="slider__controls">
+          <button class="slider__control  slider__control--active" type="button">
+            <span>1</span>
+          </button>
+          <button class="slider__control" type="button">
+            <span>2</span>
+          </button>
+          <button class="slider__control" type="button">
+            <span>3</span>
+          </button>
+        </div>
       </div>
     </section>
 
