@@ -206,6 +206,7 @@
           </div>
         </div>
 
+        <!--TODO: slider_controls - БЭМ-блок - indicator-->
         <div class="slider__controls">
           <button class="slider__control  slider__control--active" type="button">
             <span>1</span>
@@ -221,82 +222,126 @@
     </section>
 
     <!--user's plans-->
-    <section class="price">
+    <section class="prices">
       <h2 class="visually-hidden">Тарифные планы</h2>
 
-        <table class="price-table">
-          <thead class="price-table__header">
+      <div class="prices__overflow-wrap">
+
+        <table class="prices-table">
+          <thead class="prices-table__header">
             <tr>
-              <th class="price-table__cell-header  price-table__cell-header--empty"></th>
-              <th class="price-table__cell-header">
-                <p class="price-table__title">База</p>
-                <p class="price-table__cost">1,99 USD</p>
+              <th class="prices-table__cell  prices-table__cell--empty"></th>
+
+              <th class="prices-table__cell  prices-table__cell--header  prices-table__cell--first-head">
+                <p class="prices-table__title">База</p>
+                <p class="prices-table__price">1,99 USD</p>
               </th>
-              <th class="price-table__cell-header  price-table__cell-header--hit">
-                <p class="price-table__title">Стандарт</p>
-                <p class="price-table__cost">3,99 USD</p>
+
+              <th class="prices-table__cell  prices-table__cell--header">
+                <!--TODO: maybe b-element-->
+                <div class="prices__marker  prices__marker--hit"></div>
+                <p class="prices-table__title">Стандарт</p>
+                <p class="prices-table__price">3,99 USD</p>
               </th>
-              <th class="price-table__cell-header">
-                <p class="price-table__title">Анлим</p>
-                <p class="price-table__cost">9,99 USD</p>
+
+              <th class="prices-table__cell  prices-table__cell--header  prices-table__cell--last-head">
+                <p class="prices-table__title">Анлим</p>
+                <p class="prices-table__price">9,99 USD</p>
               </th>
             </tr>
           </thead>
 
-          <tbody>
+          <tbody class="prices-table__body">
             <tr>
-              <td class="price-table__cell  price-table__cell--option">Розовый фильтр</td>
-              <td class="price-table__cell  price-table__cell--yes">
-                <span>Розовый фильтр</span>
-                <span class="visually-hidden">Есть</span>
-              </td>
-              <td class="price-table__cell  price-table__cell--yes">
-                <span>Розовый фильтр</span>
-                <span class="visually-hidden">Есть</span>
-              </td>
-              <td class="price-table__cell  price-table__cell--yes">
-                <span>Розовый фильтр</span>
-                <span class="visually-hidden">Есть</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="price-table__cell  price-table__cell--option">Смайлики</td>
-              <td class="price-table__cell  price-table__cell--no">
-                <span>Смайлики</span>
-                <span class="visually-hidden">Нет</span>
-              </td>
-              <td class="price-table__cell  price-table__cell--yes">
-                <span>Смайлики</span>
-                <span class="visually-hidden">Есть</span>
-              </td>
-              <td class="price-table__cell  price-table__cell--yes">
-                <span>Смайлики</span>
-                <span class="visually-hidden">Есть</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="price-table__cell  price-table__cell--option">Комментарии</td>
-              <td class="price-table__cell  price-table__cell--no">
-                <span>Комментарии</span>
-                <span class="visually-hidden">Нет</span>
-              </td>
-              <td class="price-table__cell  price-table__cell--no">
-                <span>Комментарии</span>
-                <span class="visually-hidden">Нет</span>
-              </td>
-              <td class="price-table__cell  price-table__cell--yes">
-                <span>Комментарии</span>
-                <span class="visually-hidden">Есть</span>
-              </td>
-            </tr>
-            </tbody>
-          </table>
+              <td class="prices-table__cell  prices-table__cell--option">Розовый фильтр</td>
 
-          <p class="slider-pagination  price__slider-pagination">
-            <button class="slider-pagination__trigger"  type="button">1</button>
-            <button class="slider-pagination__trigger  slider-pagination__trigger--active" type="button">2</button>
-            <button class="slider-pagination__trigger" type="button">3</button>
-          </p>
+              <td class="prices-table__cell" data-option="Розовый фильтр">
+                <span class="visually-hidden">Есть</span>
+                <svg width="31" height="21">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-yes"></use>
+                </svg>
+              </td>
+
+              <td class="prices-table__cell" data-option="Розовый фильтр">
+                <span class="visually-hidden">Есть</span>
+                <svg width="31" height="21">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-yes"></use>
+                </svg>
+              </td>
+
+              <td class="prices-table__cell" data-option="Розовый фильтр">
+                <span class="visually-hidden">Есть</span>
+                <svg width="31" height="21">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-yes"></use>
+                </svg>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="prices-table__cell  prices-table__cell--option">Смайлики</td>
+
+              <td class="prices-table__cell" data-option="Смайлики">
+                <span class="visually-hidden">Нет</span>
+                <svg width="27" height="26">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-no"></use>
+                </svg>
+              </td>
+
+              <td class="prices-table__cell" data-option="Смайлики">
+                <span class="visually-hidden">Есть</span>
+                <svg width="31" height="21">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-yes"></use>
+                </svg>
+              </td>
+
+              <td class="prices-table__cell" data-option="Смайлики">
+                <span class="visually-hidden">Есть</span>
+                <svg width="31" height="21">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-yes"></use>
+                </svg>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="prices-table__cell  prices-table__cell--option">Комментарии</td>
+
+              <td class="prices-table__cell" data-option="Комментарии">
+                <span class="visually-hidden">Нет</span>
+                <svg width="27" height="26">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-no"></use>
+                </svg>
+              </td>
+
+              <td class="prices-table__cell" data-option="Комментарии">
+                <span class="visually-hidden">Нет</span>
+                <svg width="27" height="26">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-no"></use>
+                </svg>
+              </td>
+
+              <td class="prices-table__cell" data-option="Комментарии">
+                <span class="visually-hidden">Есть</span>
+                <svg width="31" height="21">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-yes"></use>
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!--TODO: slider_controls - БЭМ-блок-->
+      <div class="slider__controls">
+        <button class="slider__control" type="button">
+          <span>1</span>
+        </button>
+        <button class="slider__control  slider__control--active" type="button">
+          <span>2</span>
+        </button>
+        <button class="slider__control" type="button">
+          <span>3</span>
+        </button>
+      </div>
     </section>
 
     <!--contact info-->
