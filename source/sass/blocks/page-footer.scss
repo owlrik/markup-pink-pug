@@ -1,5 +1,5 @@
 .page-footer {
-  //
+  background-color: #ffffff;
 
   &--hidden {
     //display: none;
@@ -9,30 +9,59 @@
 .page-footer__inner {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  width: 280px;
+  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
-  // temp
-  outline: 1px solid red;
+  padding: 40px 20px;
 
   @media (min-width: $screen-medium) {
-    width: 620px;
     flex-direction: row;
-    justify-content: space-between;
+    padding-top: 30px;
   }
 
   @media (min-width: $screen-large) {
-    width: 940px;
+    padding: 75px 10px;
   }
 }
 
 .page-footer__logo {
+  display: block;
+  width: 147px;
+  height: 40px;
   margin: 0;
+  //
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-medium) {
+    align-self: flex-start;
+    margin-bottom: 0;
+  }
 }
 
-.page-footer__logo .logo__img--medium { //плохо, нужно через модификатор элемента/блока (каскад модификаторов в logo?)
-  //
+//TODO: подумать над модификаторами
+.page-footer__logo .logo__img--medium {
+  margin: 0;
+
   @media (max-width: $screen-large - 1) {
     display: block;
   }
+}
+
+.page-footer__logo .logo__img--large {
+  margin: 0;
+}
+
+.page-footer__social {
+  margin-right: 20px;
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-medium) {
+    margin-bottom: 0;
+  }
+}
+
+.page-footer a {
+  color: #283645;
 }

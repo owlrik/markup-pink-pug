@@ -3,6 +3,7 @@
 }
 
 .copyright__text {
+  margin: 0;
   font-size: 14px;
   line-height: 18px;
 
@@ -12,10 +13,16 @@
 }
 
 .copyright__link {
+  position: relative;
   display: inline-block;
   width: 27px;
   height: 34px;
+  margin-left: 10px;
   vertical-align: middle;
-  //temp
-  outline: 1px solid violet;
+}
+
+.copyright__link svg {
+  width: 27px;
+  height: 34.09px;
+  fill: #d22856;
 }
