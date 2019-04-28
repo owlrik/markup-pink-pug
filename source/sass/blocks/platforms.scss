@@ -1,8 +1,8 @@
 .platforms {
-  //margin: 0;  //TODO: подумать над каскадом с элементом
-  //display: flex;
-  //flex-direction: row;
-  //justify-content: space-between;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   list-style: none;
   text-align: center;
@@ -10,10 +10,12 @@
 
 .platforms__item {
   display: inline-block;
-  width: 46.21px;
-  height: 56.75px;
-  margin-right: 30px;
-  vertical-align: top;
+  margin-right: 33px;
+  vertical-align: middle;
+
+  @media (min-width: $screen-medium) {
+    margin-right: 35px;
+  }
 
   &:last-child {
     margin-right: 0;
@@ -21,22 +23,32 @@
 }
 
 .platforms__link {
-  display: inline-block;
-  width: 46.21px;
-  height: 56.75px;
-  vertical-align: top;
-  background-position: center bottom;
-  background-repeat: no-repeat;
+  display: block;
+  width: 47px;
+  height: 56px;
+  //background-repeat: no-repeat;
+  //background-position: center bottom;
 
   &--apple {
-    background-image: url("../img/logo-apple.svg");
+    width: 47px;
+    height: 56px;
+    //background-image: url("../img/logo-apple.svg");
   }
 
   &--android {
-    background-image: url("../img/logo-android.svg");
+    width: 43px;
+    height: 47px;
+    //background-image: url("../img/logo-android.svg");
   }
 
   &--microsoft {
-    background-image: url("../img/logo-microsoft.svg");
+    width: 44px;
+    height: 41px;
+    //background-image: url("../img/logo-microsoft.svg");
   }
+}
+
+.platforms__link svg {
+  width: 100%;
+  height: 100%;
 }

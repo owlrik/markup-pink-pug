@@ -1,34 +1,23 @@
 .main-nav {
   position: relative;
   min-height: 66px;
-  font-weight: 700;
-  font-size: $font-size--big;
-  line-height: 32px;
-  //color: $nav-link-color;
-  text-align: center;
-  text-transform: uppercase;
 
   @media (min-width: $screen-medium) {
     min-height: 110px;
-  }
-
-  @media (min-width: $screen-large) {
-    font-weight: 400;
-    text-transform: none;
   }
 
   &--closed {
     background-color: rgba(0, 0, 0, 0.3);
   }
 
+  &--opened {
+    background-color: #283645;
+  }
+
   &--closed .main-nav__list {
     @media (max-width: $screen-large - 1) {
       display: none;
     }
-  }
-
-  &--opened {
-    background-color: #283645;
   }
 
   &--opened .main-nav__list {
@@ -49,6 +38,33 @@
     z-index: 10;
     display: block;
   }
+
+  &--opened .trigger {
+    width: 65px;
+  }
+
+  &--opened .trigger > span {
+    width: 28px;
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      top: 0;
+      width: 28px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--opened .trigger:hover > span {
+    background-color: transparent;
+  }
 }
 
 .main-nav__top {
@@ -67,10 +83,6 @@
     padding-right: 10px;
     padding-left: 10px;
   }
-}
-
-.main-nav__logo {
-//
 }
 
 .main-nav__trigger {
@@ -100,31 +112,50 @@
   }
 }
 
-//.main-nav__list a[href] {
-//  &:hover {
-//    //
-//  }
-//  &:active {
-//    //
-//  }
-//}
+.main-nav__list a[href] {
+  &:hover {
+    color: #d22856;
+  }
+
+  &:active {
+    color: #ffffff;
+    opacity: 0.3;
+  }
+}
 
 .main-nav__link {
+  position: relative;
   display: block;
   padding: 15px 20px 15px;
-  //font-size, line-height, text-transform, text-decoration, bg-color, border-top, border-bottom
-  color: #ffffff;
+  font-weight: 700;
+  font-size: $font-size--big;
+  line-height: 32px;
+  color: $nav-link-color;
+  text-align: center;
+  text-transform: uppercase;
   text-decoration: none;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid #000000;
 
   @media (min-width: $screen-large) {
-    //font-weight: 400;
-    //font-size: 18px;
-    //text-transform: none;
     padding-right: 0;
     padding-left: 0;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: none;
     border-top: none;
     border-bottom: none;
+  }
+
+  &--active::after {
+    @media (min-width: $screen-large) {
+      content: "";
+      position: absolute;
+      top: 80%;
+      right: 0;
+      left: 0;
+      height: 2px;
+      background-color: #ffffff;
+    }
   }
 }

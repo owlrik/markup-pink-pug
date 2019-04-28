@@ -14,47 +14,52 @@
 
   <!--page header-->
   <header class="page-header">
-    <div class="page-header__inner">
 
-      <a class="logo  page-header__logo">
-        <svg class="logo__img  logo__img--small" width="74" height="22">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-mobile"></use>
-        </svg>
-        <svg class="logo__img  logo__img--medium" width="147" height="40">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-tablet"></use>
-        </svg>
-        <svg class="logo__img  logo__img--large" width="147" height="40">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-desktop"></use>
-        </svg>
-      </a>
+    <nav class="main-nav  main-nav--closed  main-nav--no-js">
+      <div class="main-nav__top">
 
-      <nav class="main-nav  main-nav--closed  main-nav--no-js">
-        <button class="toggle  main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <a class="logo  main-nav__logo" href="index.html">
+          <svg class="logo__img  logo__img--small" width="75" height="22">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-mobile"></use>
+          </svg>
+          <svg class="logo__img  logo__img--medium" width="147" height="40">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-tablet"></use>
+          </svg>
+          <svg class="logo__img  logo__img--large" width="147" height="40">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-white-desktop"></use>
+          </svg>
+        </a>
+
+        <button class="trigger  main-nav__trigger" type="button">
+          <span></span>
+        </button>
+
         <ul class="main-nav__list">
           <li class="main-nav__item">
-            <a class="main-nav__link  main-nav__link--active">Главная</a>
+            <a class="main-nav__link" href="index.html">Главная</a>
           </li>
           <li class="main-nav__item">
             <a class="main-nav__link" href="photo.html">Фотографии</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="form.html">Конкурс</a>
+            <a class="main-nav__link  main-nav__link--active">Конкурс</a>
           </li>
           <li class="main-nav__item">
             <a class="main-nav__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
           </li>
         </ul>
-      </nav>
+      </div>
+    </nav>
+
+    <div class="intro  page-header__intro">
+      <div class="intro__inner">
+        <h1 class="intro__title">Конкурс на самое безбашенное путешествие с Пинк</h1>
+      </div>
     </div>
   </header>
 
   <!--main content-->
   <main class="page-main">
-    <!--TODO: section VS div VS header-->
-    <section class="intro  intro--inner  page-main__intro">
-      <h1 class="intro__title">Конкурс на самое безбашенное путешествие с Пинк</h1>
-    </section>
-
     <!--users's story-->
     <section class="contest">
       <header class="contest__header">
@@ -215,5 +220,21 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    var navMain = document.querySelector('.main-nav');
+    var navTrigger = document.querySelector('.main-nav__trigger');
+
+    navMain.classList.remove('main-nav--no-js');
+    navTrigger.addEventListener('click', function () {
+      if (navMain.classList.contains('main-nav--closed')) {
+        navMain.classList.remove('main-nav--closed');
+        navMain.classList.add('main-nav--opened');
+      } else {
+        navMain.classList.add('main-nav--closed');
+        navMain.classList.remove('main-nav--opened');
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,38 +1,74 @@
 .page-header {
-  min-height: 66px;
+  min-height: 237px;
   color: #ffffff;
-  background-color: #283645;
-  background-image: url("../img/bg-back-mobile@1x.jpg");
-  background-position: center top;
-  background-repeat: no-repeat;
+  background: #283645 url("../img/bg-back-mobile@1x.jpg") no-repeat center top;
+  background-size: 700px auto;
+
+  @media (max-width: $screen-medium - 1) and (min-resolution: $retina-dpi),
+         (max-width: $screen-medium - 1) and (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-back-mobile@2x.jpg");
+  }
 
   @media (min-width: $screen-medium) {
-    min-height: 110px;
+    min-height: 440px;
     background-image: url("../img/bg-back-tablet@1x.jpg");
+    background-size: 1200px auto;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-back-tablet@2x.jpg");
+    }
   }
 
   @media (min-width: $screen-large) {
+    min-height: 394px;
     background-image: url("../img/bg-back-desktop@1x.jpg");
+    background-size: auto;
   }
 
+
   &--home {
+    min-height: 462px;
     background-image:
       url("../img/iphone-hand-mobile@1x.png"),
       url("../img/bg-back-mobile@1x.jpg");
     background-position: calc(50% - 30px) 176px, center top;
+    background-size: auto 286px, auto 462px;
+
+    @media (max-width: $screen-medium - 1) and (min-resolution: $retina-dpi),
+           (max-width: $screen-medium - 1) and (min-resolution: $retina-dppx) {
+      background-image:
+        url("../img/iphone-hand-mobile@2x.png"),
+        url("../img/bg-back-mobile@2x.jpg");
+    }
 
     @media (min-width: $screen-medium) {
+      min-height: 729px;
       background-image:
         url("../img/iphone-hand-tablet@1x.png"),
         url("../img/bg-back-tablet@1x.jpg");
       background-position: 50% 100%, center top;
+      background-size: auto 545px, auto 729px;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image:
+          url("../img/iphone-hand-tablet@2x.png"),
+          url("../img/bg-back-tablet@2x.jpg");
+      }
     }
 
     @media (min-width: $screen-large) {
+      min-height: 854px;
       background-image:
         url("../img/iphone-hand-desktop@1x.png"),
         url("../img/bg-back-desktop@1x.jpg");
       background-position: calc(50% + 70px) 100%, center top;
+      background-size: auto 645px, auto 854px;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image:
+          url("../img/iphone-hand-desktop@2x.png"),
+          url("../img/bg-back-desktop@1x.jpg");
+      }
     }
   }
 }

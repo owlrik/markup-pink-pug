@@ -1,18 +1,29 @@
 .logo {
   display: flex;
+  flex: 0 0 auto;
   height: 66px;
 
   @media (min-width: $screen-medium) {
     height: 110px;
   }
+
+  &[href]:hover .logo__img {
+    fill: #d22856;
+  }
+
+  &[href]:active .logo__img {
+    opacity: 0.3;
+    fill: #ffffff;
+  }
 }
+
 
 .logo__img {
   display: none;
   margin: auto 0;
 
   &--small {
-    width: 74px;
+    width: 75px;
     height: 22px;
 
     @media (max-width: $screen-medium - 1) {
@@ -24,6 +35,7 @@
     width: 147px;
     height: 40px;
     margin: 27px 0 43px;
+    fill: #ffffff;
 
     @media (min-width: $screen-medium) and (max-width: $screen-large - 1) {
       display: block;
@@ -34,6 +46,7 @@
     width: 147px;
     height: 40px;
     margin: 27px 0 43px;
+    fill: #ffffff;
 
     @media (min-width: $screen-large) {
       display: block;

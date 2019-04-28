@@ -1,26 +1,100 @@
-//TODO: добавить стили для состояний
-
 .button {
+  position: relative;
   display: inline-block;
-  //margin: 0;  //TODO: подумать над каскадом с элементом
-  padding-top: 15px; //need vars (mb component style) + pd-right & pd-left
-  padding-bottom: 16px;
+  max-width: 300px;
+  padding: 14px 15px 17px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
   vertical-align: middle;
-  font-size: 18px; //font inherit? 1em
-  line-height: 18px; //$var
-  //color: #ffffff; //$var
-  font-family: inherit;
-  text-decoration: none;
-  text-transform: none;
   text-align: center;
-  border: 3px solid #ffffff; //temp color $var
-  border-radius: 27px;  //$var
-  background-color: transparent; //temp $var
-  background-image: none;
-  box-sizing: border-box;
+  color: #d22856;
+  text-transform: none;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: normal;
+  background-color: transparent;
+  border: 3px solid #d22856;
+  border-radius: 27px;
   cursor: pointer;
+  //user-select: none;
+  //touch-action: manipulation;
 
   @media (min-width: $screen-large) {
+    padding-top: 13px;
+    padding-bottom: 15px;
     font-size: 21px;
+    line-height: 21px;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: #d22856;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: #d22856;
+  }
+
+  &--grey {
+    color: #283645;
+    border-color: #283645;
+    opacity: 0.1;
+
+    &:hover {
+      opacity: 0.3;
+    }
+
+    &:active {
+      color: #ffffff;
+      background-color: #283645;
+      opacity: 0.3;
+    }
+  }
+
+  &--white {
+    color: #ffffff;
+    border-color: #ffffff;
+
+    &:hover {
+      color: #d22856;
+      background-color: #ffffff;
+    }
+
+    &:active {
+      color: rgba(210, 40, 86, 0.7);
+    }
+  }
+
+  &--large {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+  }
+
+  &--wide {
+    width: 300px;
+  }
+
+  &--green {
+    color: #ffffff;
+    background-color: #2aab6d;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: #1c9b5e;
+    }
+
+    &:active {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    &:disabled,
+    &--disabled {
+      //
+    }
   }
 }
