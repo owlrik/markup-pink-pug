@@ -15,12 +15,12 @@
 
 .call-to-action__text {
   display: block;
-}
 
-.call-to-action__text:first-child {
-  margin-bottom: 30px;
+  &:first-child {
+    margin-bottom: 32px;
 
-  @media (min-width: $screen-medium) {
-    margin: 0;
+    @media (min-width: $screen-medium) {
+      margin: 0;
+    }
   }
 }

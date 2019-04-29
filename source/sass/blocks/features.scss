@@ -10,7 +10,7 @@
 
   @media (min-width: $screen-medium) {
     padding-top: 50px;
-    padding-bottom: 60px;
+    padding-bottom: 47px;
   }
 
   @media (min-width: $screen-large) {
@@ -19,7 +19,7 @@
   }
 }
 
-.features__container {
+.features__top {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
@@ -45,11 +45,13 @@
   padding: 75px 20px 0;
 
   @media (min-width: $screen-medium) {
-    padding-top: 60px;
+    padding-top: 72px;
   }
 
   @media (min-width: $screen-large) {
     padding-top: 0;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
@@ -60,7 +62,8 @@
 
   @media (min-width: $screen-medium) {
     position: relative;
-    padding-bottom: 48px;
+    min-height: 412px;
+    padding-bottom: 42px;
     padding-left: 50%;
     text-align: left;
   }
@@ -68,16 +71,17 @@
   @media (min-width: $screen-large) {
     display: flex;
     justify-content: space-between;
+    min-height: auto;
     padding-left: 0;
     text-align: center;
   }
 }
 
 .features__item {
-  margin-bottom: 36px;
+  margin-bottom: 30px;
 
-  &:last-child {
-    margin-bottom: 0;
+  @media (min-width: $screen-medium) {
+    margin-bottom: 35px;
   }
 
   @media (min-width: $screen-large) {
@@ -86,19 +90,34 @@
     max-width: 292px;
     margin-bottom: 0;
   }
-}
 
+  &:last-child {
+    margin-bottom: 0;
+  }
 
-.features__text {
-  //
+  //БЭМ-решение: использовать модификаторы
+  &:last-child .features__img {
+    display: block;
+
+    //@media (min-width: $screen-medium) {
+    //  position: absolute;
+    //  bottom: 0;
+    //  left: 0;
+    //}
+    //
+    //@media (min-width: $screen-large) {
+    //  position: static;
+    //}
+  }
 }
 
 .features__title {
   margin-top: 0;
-  margin-bottom: 11px;
+  margin-bottom: 12px;
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  color: #000000;
 
   @media (min-width: $screen-large) {
     margin-bottom: 25px;
@@ -116,7 +135,6 @@
   line-height: 24px;
 
   @media (min-width: $screen-medium) {
-    margin-top: 12px;
     line-height: 24px;
   }
 
@@ -150,9 +168,7 @@
   }
 }
 
-.features__item:last-child .features__img {
-  display: block;
-
+.features__item .features__img {
   @media (min-width: $screen-medium) {
     position: absolute;
     bottom: 0;
