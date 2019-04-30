@@ -1,38 +1,64 @@
 .slider {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 940px;
   padding-right: 20px;
   padding-left: 20px;
+
+  &--wide {
+    max-width: 960px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &--wide .slider__overflow-wrap {
+    padding-right: 20px;
+    padding-left: 20px;
+
+    @media (min-width: $screen-large) {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
 }
 
 .slider__togglers {
   display: none;
 
   @media (min-width: $screen-large) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
     display: block;
+    width: 100%;
+    height: 100%;
   }
 }
 
 .slider__toggler {
   position: absolute;
   top: 0;
+  z-index: 2;
   width: 60px;
   height: 100%;
 
-  &--prev {
+  & svg {
+    position: absolute;
+    top: 30px;
+    fill: #bec2c7;
+  }
+
+  &--prev,
+  &--prev svg {
     left: 0;
   }
 
-  &--next {
+  &--next,
+  &--next svg {
     right: 0;
   }
-}
-
-.slider__toggler svg {
-  position: absolute;
-  top: 30px;
-  fill: #bec2c7;
 }
 
 .slider__overflow-wrap {
@@ -53,12 +79,8 @@
 .slider__controls {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 25px;
   text-align: center;
-
-  @media (min-width: $screen-medium) {
-    margin-top: 20px;
-  }
 
   @media (min-width: $screen-large) {
     display: none;
@@ -79,11 +101,24 @@
   height: 6px;
   font-size: 0;
   vertical-align: middle;
-  background-color: #bec2c7;
+  background-color: rgba(40, 54, 69, 0.3);
   border-radius: 50%;
+}
+
+.slider__control:hover span {
+  background-color: rgba(40, 54, 69, 0.6);
+}
+
+.slider__control:active span {
+  background-color: rgba(40, 54, 69, 0.1);
 }
 
 .slider__control--active span {
   background-color: transparent;
   box-shadow: 0 0 0 3px #283645;
+}
+
+.slider__control--active:hover span,
+.slider__control--active:active span {
+  background-color: transparent;
 }
