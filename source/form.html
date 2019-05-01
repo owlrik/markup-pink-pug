@@ -183,8 +183,7 @@
   <footer class="page-footer">
     <div class="page-footer__inner">
 
-      <a class="logo  page-footer__logo">
-        <!--TODO: стилизация контекстом от .page-footer .logo__img--medium VS стилизация svg в модификаторе .logo__img--blue-->
+      <a class="logo  page-footer__logo" href="index.html">
         <svg class="logo__img  logo__img--medium  logo__img--blue" width="147" height="40">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-pink-blue-mobile"></use>
         </svg>
@@ -193,31 +192,50 @@
         </svg>
       </a>
 
-      <section class="social  page-footer__social">
+      <section class="page-footer__social">
         <h2 class="visually-hidden">Ищите нас в соцсетях!</h2>
-        <ul class="social__list">
-          <li class="social__item">
-            <a class="social__link  social__link--twitter" href="#">
-              <span class="visually-hidden">Twitter</span>
+
+        <ul class="social-links">
+          <li class="social-links__item">
+            <a class="social-links__link  social-links__link--twitter" href="#">
+              <span class="visually-hidden">Наша страница в Twitter</span>
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use>
+              </svg>
             </a>
           </li>
-          <li class="social__item">
-            <a class="social__link  social__link--facebook" href="#"><span class="visually-hidden">Facebook</span></a>
+
+          <li class="social-links__item">
+            <a class="social-links__link  social-links__link--facebook" href="#">
+              <span class="visually-hidden">Наша группа в Facebook</span>
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use>
+              </svg>
+            </a>
           </li>
-          <li class="social__item">
-            <a class="social__link  social__link--youtube" href="#"><span class="visually-hidden">YouTube</span></a>
+
+          <li class="social-links__item">
+            <a class="social-links__link  social-links__link--youtube" href="#">
+              <span class="visually-hidden">Наш канал на YouTube</span>
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-youtube"></use>
+              </svg>
+            </a>
           </li>
         </ul>
       </section>
 
-      <div class="copyright  page-footer__copyright">
+      <section class="copyright  page-footer__copyright">
         <p class="copyright__text">
           Разработано
           <a class="copyright__link" target="_blank" href="https://htmlacademy.ru/">
             <span class="visually-hidden">в HTML Academy</span>
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-htmlacademy"></use>
+            </svg>
           </a>
         </p>
-      </div>
+      </section>
     </div>
   </footer>
 

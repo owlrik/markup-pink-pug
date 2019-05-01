@@ -17,8 +17,17 @@
   display: inline-block;
   width: 27px;
   height: 34px;
-  margin-left: 10px;
+  margin-left: 12px;
   vertical-align: middle;
+
+  &:hover svg {
+    fill: #283645;
+  }
+
+  &:active svg {
+    fill: #283645;
+    fill-opacity: 0.3;
+  }
 }
 
 .copyright__link svg {

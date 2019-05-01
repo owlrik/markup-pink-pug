@@ -1,8 +1,10 @@
 .page-footer {
   background-color: #ffffff;
 
-  &--hidden {
-    //display: none;
+  &--home {
+    @media (max-width: $screen-medium - 1) {
+      display: none;
+    }
   }
 }
 
@@ -18,7 +20,7 @@
 
   @media (min-width: $screen-medium) {
     flex-direction: row;
-    padding-top: 30px;
+    padding-top: 40px;
   }
 
   @media (min-width: $screen-large) {
@@ -31,7 +33,6 @@
   width: 147px;
   height: 40px;
   margin: 0;
-  //
   margin-bottom: 40px;
 
   @media (min-width: $screen-medium) {
@@ -40,7 +41,6 @@
   }
 }
 
-//TODO: подумать над модификаторами
 .page-footer__logo .logo__img--medium {
   margin: 0;
 
@@ -54,11 +54,16 @@
 }
 
 .page-footer__social {
-  margin-right: 20px;
   margin-bottom: 40px;
 
   @media (min-width: $screen-medium) {
+    margin-right: 15px;
     margin-bottom: 0;
+  }
+
+  @media (min-width: $screen-large) {
+    margin-right: 0;
+    margin-left: 5px;
   }
 }
 

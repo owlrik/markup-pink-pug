@@ -23,6 +23,18 @@
   height: 51px;
   border: 3px solid rgba(40, 54, 69, 0.1);
   border-radius: 50%;
+
+  &:hover {
+    border-color: #283645;
+  }
+
+  &:active {
+    border-color: rgba(40, 54, 69, 0.1);
+  }
+
+  &:active svg {
+    fill-opacity: 0.1;
+  }
 }
 
 .social-links__link svg {
@@ -41,9 +53,12 @@
 .social-links__link--facebook svg {
   width: 8.673px;
   height: 18.944px;
+  margin-top: -1px;
 }
 
 .social-links__link--youtube svg {
   width: 14.64px;
   height: 13.96px;
+  margin-top: -1px;
+  margin-left: 2px;
 }
