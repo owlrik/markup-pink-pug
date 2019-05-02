@@ -13,10 +13,16 @@
 
   &[href]:active .logo__img {
     opacity: 0.3;
+  }
+
+  &--white .logo__img {
     fill: #ffffff;
   }
-}
 
+  &--blue .logo__img {
+    fill: #283645;
+  }
+}
 
 .logo__img {
   display: none;
@@ -35,7 +41,6 @@
     width: 147px;
     height: 40px;
     margin: 27px 0 43px;
-    fill: #ffffff;
 
     @media (min-width: $screen-medium) and (max-width: $screen-large - 1) {
       display: block;
@@ -46,7 +51,6 @@
     width: 147px;
     height: 40px;
     margin: 27px 0 43px;
-    fill: #ffffff;
 
     @media (min-width: $screen-large) {
       display: block;
