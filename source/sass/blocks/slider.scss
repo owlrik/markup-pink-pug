@@ -44,10 +44,18 @@
   width: 60px;
   height: 100%;
 
+  &:hover svg {
+    fill: rgba(40, 54, 69, 0.6);
+  }
+
+  &:active svg {
+    fill: rgba(40, 54, 69, 0.1);
+  }
+
   & svg {
     position: absolute;
     top: 30px;
-    fill: #bec2c7;
+    fill: rgba(40, 54, 69, 0.3);
   }
 
   &--prev,
