@@ -1,15 +1,24 @@
 .call-to-action {
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 1.2;
+  font-size: 14px;
+  line-height: 30px;
   text-align: center;
 
   @media (min-width: $screen-medium) {
-    font-size: 40px;
+    font-size: 18px;
   }
 
-  @media (min-width: $screen-large) {
-    font-size: 50px;
+  &--home {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.2;
+
+    @media (min-width: $screen-medium) {
+      font-size: 40px;
+    }
+
+    @media (min-width: $screen-large) {
+      font-size: 50px;
+    }
   }
 }
 
