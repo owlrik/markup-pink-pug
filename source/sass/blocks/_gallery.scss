@@ -3,20 +3,87 @@
 }
 
 .gallery__header {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 45px 20px 50px;
+  padding-top: 45px;
+  padding-bottom: 50px;
 
   @media (min-width: $screen-medium) {
-    padding: 92px 50px 76px;
+    padding-top: 92px;
+    padding-bottom: 76px;
   }
 
   @media (min-width: $screen-large) {
-    padding: 92px 80px 88px;
+    padding-bottom: 88px;
+  }
+}
+
+.gallery__top {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @media (min-width: $screen-medium) {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  @media (min-width: $screen-large) {
+    padding-right: 80px;
+    padding-left: 80px;
   }
 }
 
 .gallery__call-to-action {
   margin: 0;
+}
+
+.gallery__inner {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @media (min-width: $screen-large) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.gallery__layout {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.gallery__item {
+  max-width: 300px;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  @media (min-width: $screen-medium) {
+    max-width: 320px;
+  }
+
+  @media (min-width: $screen-large) {
+    margin-bottom: 54px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--panorama {
+    max-width: none;
+    padding-right: 0;
+    padding-left: 0;
+
+    @media (min-width: $screen-medium) {
+      margin-bottom: 50px;
+    }
+  }
 }

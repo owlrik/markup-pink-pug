@@ -1,0 +1,162 @@
+.post {
+  width: 280px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #283645;
+  background-color: #f2f2f2;
+
+  @media (min-width: $screen-medium) {
+    width: 300px;
+  }
+
+  &--panorama {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    background-color: transparent;
+  }
+
+  &--panorama::before {
+    content: "Панорама дня";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    min-width: 140px;
+    padding: 6px 20px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #d22856;
+
+    @media (min-width: $screen-medium) {
+      top: 57px;
+      left: 75.75%;
+    }
+
+    @media (min-width: $screen-large) {
+      left: 77.5%;
+    }
+  }
+}
+
+.post__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.post__inner {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 18px 20px;
+
+  @media (min-width: $screen-medium) {
+    min-height: 155px;
+    padding: 24px 27px 22px;
+  }
+
+  &--panorama {
+    max-width: 280px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+
+    @media (min-width: $screen-medium) {
+      flex-flow: row wrap;
+      justify-content: space-between;
+      max-width: 620px;
+      min-height: auto;
+      padding-bottom: 15px;
+    }
+
+    @media (min-width: $screen-large) {
+      max-width: 940px;
+    }
+  }
+
+  &--panorama .post__comment {
+    @media (min-width: $screen-medium) {
+      order: 2;
+    }
+  }
+
+  &--panorama .post__likes {
+    @media (min-width: $screen-medium) {
+      margin-top: 0;
+    }
+  }
+
+  &--panorama .post__like {
+    @media (min-width: $screen-medium) {
+      right: 2px;
+    }
+  }
+}
+
+.post__meta {
+  //
+}
+
+.post__author-name {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.post__time {
+  font-weight: 300;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.post__comment {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.post__likes {
+  position: relative;
+  padding-left: 30px;
+
+  @media (min-width: $screen-medium) {
+    margin-top: auto;
+    padding-right: 30px;
+    padding-left: 0;
+  }
+
+  @media (min-width: $screen-medium) {
+    padding-right: 35px;
+  }
+}
+
+.post__like {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 13px;
+  height: 12px;
+  transform: translateY(-50%);
+
+  @media (min-width: $screen-medium) {
+    right: 4px;
+    left: auto;
+  }
+
+  &:active svg {
+    fill: rgba(210, 40, 86, 0.3);
+  }
+}
+
+.post__like svg {
+  fill: #d22856;
+}
+
+.post__likes-count {
+  margin: 0;
+  font-size: 12px;
+  color: #d22856;
+  text-transform: uppercase;
+}
