@@ -313,46 +313,83 @@
     <!--user's upload form-->
     <section class="photo-upload">
       <header class="photo-upload__header">
-        <h2 class="visually-hidden">Форма для редактирования и отправления фото</h2>
-        <p class="call-to-action  photo-upload__call-to-action">Затмите их всех! Выкладывайте все, что накопилось в телефоне!</p>
+        <div class="photo-upload__top">
+          <h2 class="visually-hidden">Форма для редактирования и загрузки фото</h2>
+          <p class="call-to-action  photo-upload__call-to-action">Затмите их всех!<br> Выкладывайте все, что накопилось в телефоне!</p>
+        </div>
       </header>
 
-      <div class="photo-upload__inner">
-        <form class="form  photo-upload__form" action="#" method="post">
-          <picture class="photo-upload__image">
-            <source media="(min-width: 960px)" srcset="img/photo-7-desktop@1x.jpg 1x, img/photo-7-desktop@2x.jpg 2x">
-            <source media="(min-width: 660px)" srcset="img/photo-7-tablet@1x.jpg 1x, img/photo-7-tablet@2x.jpg 2x">
-            <img
-              srcset="img/photo-7-mobile@1x.jpg 1x, img/photo-7-mobile@2x.jpg 2x"
-              src="img/photo-7-mobile@1x.jpg"
-              alt="Зимняя дорога">
-          </picture>
+      <div class="photo-upload__wrap">
+        <div class="photo-upload__inner">
 
-          <div class="photo-upload__tools">
-            <label class="photo-upload__range  photo-upload__range--crop  photo-upload__range--active" for="crop">
-              <span class="visually-hidden">Обрезка</span>
-              <input class="photo-upload__range-control  photo-upload__range-control--crop" type="range"
-                min="1" max="10" step="1" value="3" id="crop">
-            </label>
+          <form action="https://htmlacademy.ru/echo" method="post">
+            <div class="photo-upload__content">
 
-            <label class="photo-upload__range  photo-upload__range--fill  photo-upload__range--active" for="fill">
-              <span class="visually-hidden">Заливка</span>
-              <input class="photo-upload__range-control  photo-upload__range-control--fill" type="range"
-                min="1" max="10" step="1" value="9" id="fill">
-            </label>
+              <div class="photo-upload__wrap-img">
+                <picture>
+                  <source media="(min-width: 960px)" srcset="img/photo-winter-desktop@1x.jpg 1x, img/photo-winter-desktop@2x.jpg 2x">
+                  <source media="(min-width: 660px)" srcset="img/photo-winter-tablet@1x.jpg 1x, img/photo-winter-tablet@2x.jpg 2x">
+                  <img class="photo-upload__image"
+                    srcset="img/photo-winter-mobile@1x.jpg 1x, img/photo-winter-mobile@2x.jpg 2x"
+                    src="img/photo-winter-mobile@1x.jpg"
+                    alt="Зимняя дорога">
+                </picture>
+              </div>
 
-            <label class="photo-upload__range  photo-upload__range--contrast  photo-upload__range--active" for="contrast">
-              <span class="visually-hidden">Контраст</span>
-              <input class="photo-upload__range-control  photo-upload__range-control--contrast" type="range"
-                min="1" max="10" step="1" value="8" id="contrast">
-            </label>
-          </div>
+              <div class="photo-upload__wrap-tools">
+                <div class="photo-upload__tools">
 
-          <div class="photo-upload__buttons">
-            <button class="button  button--post" type="submit">Запостить</button>
-            <button class="button  button--disabled" type="reset">Отмена</button>
-          </div>
-        </form>
+                  <input class="photo-upload__toggle" type="radio" name="toggle" id="toggle-crop" checked>
+                  <label class="range  photo-upload__range" for="toggle-crop">
+                    <span class="visually-hidden">Обрезка</span>
+                    <span class="range__icon  range__icon--crop">
+                      <svg width="48" height="48">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-editor-crop"></use>
+                      </svg>
+                    </span>
+
+                    <span class="range__track  range__track--crop">
+                      <span class="range__thumb"></span>
+                    </span>
+                  </label>
+
+                  <input class="photo-upload__toggle" type="radio" name="toggle" id="toggle-fill">
+                  <label class="range  photo-upload__range" for="toggle-fill">
+                    <span class="visually-hidden">Заливка</span>
+                    <span class="range__icon  range__icon--fill">
+                      <svg width="53" height="48">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-editor-fill"></use>
+                      </svg>
+                    </span>
+
+                    <span class="range__track  range__track--fill">
+                      <span class="range__thumb"></span>
+                    </span>
+                  </label>
+
+                  <input class="photo-upload__toggle" type="radio" name="toggle" id="toggle-contrast">
+                  <label class="range  photo-upload__range" for="toggle-contrast">
+                    <span class="visually-hidden">Контраст</span>
+                    <span class="range__icon  range__icon--contrast">
+                      <svg width="32" height="32">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-editor-contrast"></use>
+                      </svg>
+                    </span>
+
+                    <span class="range__track  range__track--contrast">
+                      <span class="range__thumb"></span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="photo-upload__buttons">
+                  <button class="button  photo-upload__button" type="submit">Запостить</button>
+                  <button class="button  button--grey  photo-upload__button" type="reset">Отмена</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   </main>

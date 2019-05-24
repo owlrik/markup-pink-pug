@@ -21,10 +21,10 @@
   //touch-action: manipulation;
 
   @media (min-width: $screen-large) {
-    padding-top: 13px;
-    padding-bottom: 15px;
-    font-size: 21px;
-    line-height: 21px;
+    //padding-top: 13px;
+    //padding-bottom: 15px;
+    //font-size: 21px;
+    //line-height: 21px;
   }
 
   &:hover {
@@ -43,6 +43,9 @@
     opacity: 0.1;
 
     &:hover {
+      color: #283645;
+      border-color: #283645;
+      background-color: transparent;
       opacity: 0.3;
     }
 
