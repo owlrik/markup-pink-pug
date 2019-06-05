@@ -33,3 +33,11 @@
     }
   }
 }
+
+.call-to-action__hidden {
+  display: none;
+
+  @media (min-width: $screen-medium) {
+    display: inline;
+  }
+}
