@@ -267,6 +267,27 @@
     </div>
   </footer>
 
+  <!--contest popups-->
+  <div class="modal">
+    <div class="form-message  form-message--success  modal__form-message">
+      <strong class="form-message__title">Ваша заявка отправлена</strong>
+      <p class="form-message__descr">
+        Спасибо за&nbsp;ваше участие, ваша заявка уже поступила к&nbsp;нам. В ближайшее время мы&nbsp;рассмотрим ее&nbsp;и оповестим&nbsp;вас.
+      </p>
+      <div class="form-message__button-wrapper">
+        <button class="button  button--green  button--large  form-message__button" type="button">Закрыть окно</button>
+      </div>
+    </div>
+
+    <div class="form-message  form-message--error  modal__form-message">
+      <strong class="form-message__title">Что-то пошло не&nbsp;так!</strong>
+      <p class="form-message__descr">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
+      <div class="form-message__button-wrapper">
+        <button class="button  button--green  button--large  form-message__button" type="button">ОК</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     var navMain = document.querySelector('.main-nav');
     var navTrigger = document.querySelector('.main-nav__trigger');
