@@ -93,5 +93,13 @@
 }
 
 .research__link {
-  margin-top: 0;
+  color: #d22856;
+
+  &:hover {
+    color: #283645;
+  }
+
+  &:active {
+    color: rgba(40, 54, 69, 0.3);
+  }
 }
