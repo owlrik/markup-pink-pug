@@ -20,7 +20,8 @@
   margin-left: 12px;
   vertical-align: middle;
 
-  &:hover svg {
+  &:hover svg,
+  &:focus svg {
     fill: #283645;
   }
 

@@ -44,7 +44,8 @@
   width: 60px;
   height: 100%;
 
-  &:hover svg {
+  &:hover svg,
+  &:focus svg {
     fill: rgba(40, 54, 69, 0.6);
   }
 
@@ -113,7 +114,8 @@
   border-radius: 50%;
 }
 
-.slider__control:hover span {
+.slider__control:hover span,
+.slider__control:focus span {
   background-color: rgba(40, 54, 69, 0.6);
 }
 

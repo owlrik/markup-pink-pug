@@ -10,6 +10,10 @@
   //
 }
 
+.radio-field__input:focus + .radio-field__label::before {
+  box-shadow: 0 0 0 2px #283645;
+}
+
 .radio-field__input:checked + .radio-field__label {
 
   &:active::before {

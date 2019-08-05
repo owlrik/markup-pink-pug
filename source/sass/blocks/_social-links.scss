@@ -24,7 +24,8 @@
   border: 3px solid rgba(40, 54, 69, 0.1);
   border-radius: 50%;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: #283645;
   }
 

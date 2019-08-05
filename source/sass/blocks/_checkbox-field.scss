@@ -19,6 +19,10 @@
   opacity: 0;
 }
 
+.checkbox-field__input:focus + .checkbox-field__label::before {
+  border-color: #283645;
+}
+
 .checkbox-field__label {
   position: relative;
   display: block;

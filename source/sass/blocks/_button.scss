@@ -27,13 +27,14 @@
     //line-height: 21px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: #ffffff;
     background-color: #d22856;
   }
 
   &:active {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.3);
     background-color: #d22856;
   }
 
@@ -42,7 +43,8 @@
     border-color: #283645;
     opacity: 0.1;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: #283645;
       background-color: transparent;
       border-color: #283645;
@@ -60,13 +62,15 @@
     color: #ffffff;
     border-color: #ffffff;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: #d22856;
       background-color: #ffffff;
     }
 
     &:active {
       color: rgba(210, 40, 86, 0.3);
+      background-color: #ffffff;
     }
   }
 
@@ -88,7 +92,8 @@
     border-color: #2aab6d;
     border-radius: 2px;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #1c9b5e;
       border-color: #1c9b5e;
     }

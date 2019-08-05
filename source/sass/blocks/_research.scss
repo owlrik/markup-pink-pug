@@ -95,7 +95,8 @@
 .research__link {
   color: #d22856;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: #283645;
   }
 

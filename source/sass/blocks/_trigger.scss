@@ -48,6 +48,12 @@
   background-color: #d22856;
 }
 
+.trigger:focus > span,
+.trigger:focus > span::before,
+.trigger:focus > span::after {
+  background-color: #d22856;
+}
+
 .trigger:active > span,
 .trigger:active > span::before,
 .trigger:active > span::after {

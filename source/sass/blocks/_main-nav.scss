@@ -113,7 +113,8 @@
 }
 
 .main-nav__list a[href] {
-  &:hover {
+  &:hover,
+  &:focus {
     color: #d22856;
   }
 
