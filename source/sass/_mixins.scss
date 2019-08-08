@@ -1,8 +1,16 @@
-@mixin no-outline {
-  outline: none;
-  background-color: transparent;
+@mixin track() {
+  box-sizing: border-box;
+  width: $track-w;
+  height: $track-h;
+  background-color: #283645;
+  border: none;
+}
 
-  &::before {
-    display: none;
-  }
+@mixin thumb() {
+  box-sizing: border-box;
+  width: $thumb-d;
+  height: $thumb-d;
+  background-color: #f2f2f2;
+  border: 2px solid #d22856;
+  border-radius: 50%;
 }

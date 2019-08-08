@@ -127,9 +127,9 @@
                   <cite class="post__author-name">Левон</cite>
                   <time class="post__time" datetime="2018-11-10 11:00">(5 часов назад)</time>
                 </div>
-                
+
                 <p class="post__comment">Вчера он на луну летал, сегодня в руки к нам попал.</p>
-                
+
                 <div class="post__likes">
                   <button class="post__like  button-image">Нравится!
                     <svg width="13" height="12">
@@ -160,9 +160,9 @@
                   <cite class="post__author-name">Антон</cite>
                   <time class="post__time" datetime="2018-11-10 04:00">(12 часов назад)</time>
                 </div>
-                
+
                 <p class="post__comment">Соседи будут рады!</p>
-                
+
                 <div class="post__likes">
                   <button class="post__like  button-image">Нравится!
                     <svg width="13" height="12">
@@ -193,9 +193,9 @@
                   <cite class="post__author-name">Борис</cite>
                   <time class="post__time" datetime="2018-11-09 20:00">(20 часов назад)</time>
                 </div>
-                
+
                 <p class="post__comment">Здесь могла быть ваша цитата о высоком и вечном</p>
-                
+
                 <div class="post__likes">
                   <button class="post__like  button-image">Нравится!
                     <svg width="13" height="12">
@@ -226,9 +226,9 @@
                   <cite class="post__author-name">Сергей</cite>
                   <time class="post__time" datetime="2018-11-09 15:00">(25 часов назад)</time>
                 </div>
-                
+
                 <p class="post__comment">Самая кубанская в мире!</p>
-                
+
                 <div class="post__likes">
                   <button class="post__like  button-image">Нравится!
                     <svg width="13" height="12">
@@ -259,9 +259,9 @@
                   <cite class="post__author-name">Максим</cite>
                   <time class="post__time" datetime="2018-11-09 00:00">(40 часов назад)</time>
                 </div>
-                
+
                 <p class="post__comment">Где снег-то?</p>
-                
+
                 <div class="post__likes">
                   <button class="post__like  button-image">Нравится!
                     <svg width="13" height="12">
@@ -292,9 +292,9 @@
                   <cite class="post__author-name">Надежда</cite>
                   <time class="post__time" datetime="2018-11-08 19:00">(45 часов назад)</time>
                 </div>
-                
+
                 <p class="post__comment">Всем GM и взаимные лайки!</p>
-                
+
                 <div class="post__likes">
                   <button class="post__like  button-image">Нравится!
                     <svg width="13" height="12">
@@ -339,46 +339,43 @@
               <div class="photo-upload__wrap-tools">
                 <div class="photo-upload__tools">
 
-                  <input class="photo-upload__toggle" type="radio" name="toggle" id="toggle-crop" checked>
+                  <input class="photo-upload__toggle  visually-hidden" type="radio" name="toggle" id="toggle-crop" checked>
                   <label class="range  photo-upload__range" for="toggle-crop">
                     <span class="visually-hidden">Обрезка</span>
+
                     <span class="range__icon  range__icon--crop">
                       <svg width="48" height="48">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-editor-crop"></use>
                       </svg>
                     </span>
 
-                    <span class="range__track  range__track--crop">
-                      <span class="range__thumb"></span>
-                    </span>
+                    <input class="range__input  range__input--crop" type="range" name="range-crop" min="0" max="100" value="85" id="range-crop">
                   </label>
 
-                  <input class="photo-upload__toggle" type="radio" name="toggle" id="toggle-fill">
+                  <input class="photo-upload__toggle  visually-hidden" type="radio" name="toggle" id="toggle-fill">
                   <label class="range  photo-upload__range" for="toggle-fill">
                     <span class="visually-hidden">Заливка</span>
+
                     <span class="range__icon  range__icon--fill">
                       <svg width="53" height="48">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-editor-fill"></use>
                       </svg>
                     </span>
 
-                    <span class="range__track  range__track--fill">
-                      <span class="range__thumb"></span>
-                    </span>
+                    <input class="range__input  range__input--fill" type="range" name="range-fill" min="0" max="100" value="12" id="range-fill">
                   </label>
 
-                  <input class="photo-upload__toggle" type="radio" name="toggle" id="toggle-contrast">
+                  <input class="photo-upload__toggle  visually-hidden" type="radio" name="toggle" id="toggle-contrast">
                   <label class="range  photo-upload__range" for="toggle-contrast">
                     <span class="visually-hidden">Контраст</span>
+
                     <span class="range__icon  range__icon--contrast">
                       <svg width="32" height="32">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-editor-contrast"></use>
                       </svg>
                     </span>
 
-                    <span class="range__track  range__track--contrast">
-                      <span class="range__thumb"></span>
-                    </span>
+                    <input class="range__input  range__input--contrast" type="range" name="range-contrast" min="0" max="100" value="50" id="range-contrast">
                   </label>
                 </div>
 

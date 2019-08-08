@@ -27,6 +27,7 @@
 
   &--contrast {
     @media (min-width: $screen-medium) {
+      left: 6px;
       width: 16px;
       height: 16px;
     }
@@ -53,14 +54,18 @@
   }
 }
 
-.range__track {
+.range__input {
   position: absolute;
   right: 20px;
-  bottom: 35px;
+  bottom: 30px;
   display: none;
   width: 240px;
-  height: 2px;
-  background-color: #283645;
+  height: 14px;
+  margin: 0;
+  padding: 0;
+  font: 1rem/1 "Open Sans", sans-serif;
+  background-color: transparent;
+  cursor: pointer;
 
   @media (min-width: $screen-medium) {
     display: block;
@@ -71,30 +76,56 @@
     right: 30px;
     width: 288px;
   }
-
-  &--crop .range__thumb {
-    left: 80%;
-  }
-
-  &--fill .range__thumb {
-    left: 12.376%;
-  }
-
-  &--contrast .range__thumb {
-    left: 47.525%;
-  }
 }
 
-.range__thumb {
-  position: absolute;
-  top: -6px;
-  width: 14px;
-  height: 14px;
-  background-color: #f2f2f2;
-  border: 2px solid #d22856;
-  border-radius: 50%;
+.range__input,
+.range__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
 
-  &:active {
-    background-color: #d22856;
-  }
+.range__input::-webkit-slider-runnable-track {
+  @include track;
+}
+
+.range__input::-moz-range-track {
+  @include track;
+}
+
+.range__input::-ms-track {
+  @include track;
+  color: transparent; //removes the initial tick marks in Edge
+}
+
+.range__input::-ms-fill-lower {
+  background-color: transparent;
+}
+
+.range__input::-webkit-slider-thumb {
+  @include thumb;
+  margin-top: -6px; //in Chrome thumb is top-aligned to the top of track's content box, see https://css-tricks.com/sliding-nightmare-understanding-range-input/#thumb
+}
+
+.range__input::-moz-range-thumb {
+  @include thumb;
+}
+
+.range__input::-ms-thumb {
+  @include thumb;
+  margin-top: 0;
+}
+
+.range__input::-ms-tooltip {
+  display: none;
+}
+
+.range__input:active::-webkit-slider-thumb {
+  background-color: #d22856;
+}
+
+.range__input:active::-moz-range-thumb {
+  background-color: #d22856;
+}
+
+.range__input:active::-ms-thumb {
+  background-color: #d22856;
 }
