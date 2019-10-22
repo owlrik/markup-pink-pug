@@ -10,7 +10,7 @@ const csso = require('gulp-csso');
 const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
 
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 const concat = require('gulp-concat');
 
 const imagemin = require('gulp-imagemin');
@@ -47,11 +47,11 @@ function processHtml() {
 exports.processHtml = processHtml;
 
 function buildJs() {
-  return src('source/js/**/*.js')
+  return src(['source/js/lib/**/*.js', 'source/js/utils/**/*.js', 'source/js/script.js'])
     .pipe(plumber())
     .pipe(concat('script.js'))
     .pipe(dest('build/js'))
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(rename('script.min.js'))
     .pipe(dest('build/js'))
 }
