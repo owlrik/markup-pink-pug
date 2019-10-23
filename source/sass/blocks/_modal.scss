@@ -10,6 +10,10 @@
   overflow-y: auto;
   font-size: 14px;
   line-height: 24px;
+
+  &--show {
+    display: block;
+  }
 }
 
 .modal__form-message {

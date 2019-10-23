@@ -159,7 +159,7 @@
 
               <div class="text-field  form__text-field">
                 <label class="text-field__label" for="email">Адрес почты</label>
-                <input class="text-field__input" type="email" name="email" id="email" placeholder="Введите почту *">
+                <input class="text-field__input" type="email" name="email" id="email" placeholder="Введите почту *" required>
               </div>
             </div>
           </fieldset>
@@ -269,7 +269,7 @@
 
   <!--contest popups-->
   <div class="modal">
-    <div class="form-message  form-message--success  modal__form-message">
+    <div class="form-message  form-message--success  modal__form-message  hidden">
       <strong class="form-message__title">Ваша заявка отправлена</strong>
       <p class="form-message__descr">
         Спасибо за&nbsp;ваше участие, ваша заявка уже поступила к&nbsp;нам. В ближайшее время мы&nbsp;рассмотрим ее&nbsp;и оповестим&nbsp;вас.
@@ -279,7 +279,7 @@
       </div>
     </div>
 
-    <div class="form-message  form-message--error  modal__form-message">
+    <div class="form-message  form-message--error  modal__form-message  hidden">
       <strong class="form-message__title">Что-то пошло не&nbsp;так!</strong>
       <p class="form-message__descr">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
       <div class="form-message__button-wrapper">
@@ -288,20 +288,6 @@
     </div>
   </div>
 
-  <script>
-    var navMain = document.querySelector('.main-nav');
-    var navTrigger = document.querySelector('.main-nav__trigger');
-
-    navMain.classList.remove('main-nav--no-js');
-    navTrigger.addEventListener('click', function () {
-      if (navMain.classList.contains('main-nav--closed')) {
-        navMain.classList.remove('main-nav--closed');
-        navMain.classList.add('main-nav--opened');
-      } else {
-        navMain.classList.add('main-nav--closed');
-        navMain.classList.remove('main-nav--opened');
-      }
-    });
-  </script>
+  <script src="js/script.min.js"></script>
 </body>
 </html>
