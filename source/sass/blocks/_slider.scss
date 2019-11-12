@@ -53,6 +53,12 @@
     fill: rgba(40, 54, 69, 0.1);
   }
 
+  &:disabled svg,
+  &--disabled svg {
+    fill: #e5e5e5;
+    cursor: not-allowed;
+  }
+
   & svg {
     position: absolute;
     top: 30px;
