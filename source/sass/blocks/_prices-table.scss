@@ -14,14 +14,14 @@
 
 .prices-table__header {
   text-align: center;
-  color: #ffffff;
-  background-color: #283645;
+  color: $white;
+  background-color: $color-main;
 }
 
 .prices-table__cell {
   position: relative;
   padding: 15px 20px;
-  border: 2px solid #e5e5e5;
+  border: 2px solid $gray--light;
   border-top: none;
 
   @media (min-width: $screen-medium) {
@@ -46,7 +46,7 @@
   &--header {
     padding: 18px 20px 20px;
     border: 0;
-    border-right: 2px solid #e5e5e5;
+    border-right: 2px solid $gray--light;
 
     @media (min-width: $screen-medium) {
       width: 25%;
@@ -91,7 +91,7 @@
 
     &:first-child {
       @media (min-width: $screen-medium) {
-        border-top: 2px solid #e5e5e5;
+        border-top: 2px solid $gray--light;
       }
     }
   }
@@ -148,8 +148,8 @@
 }
 
 .prices-table__body {
-  color: #283645;
-  background-color: #ffffff;
+  color: $color-main;
+  background-color: $white;
 }
 
 .prices-table__body .prices-table__cell {
@@ -188,8 +188,8 @@
     font-size: 14px;
     line-height: 30px;
     text-transform: uppercase;
-    color: #ffffff;
-    background-color: #d22856;
+    color: $white;
+    background-color: $color-secondary;
     transform: rotate(-45deg);
 
     @media (min-width: $screen-medium) {

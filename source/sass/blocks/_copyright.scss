@@ -22,11 +22,11 @@
 
   &:hover svg,
   &:focus svg {
-    fill: #283645;
+    fill: $color-main;
   }
 
   &:active svg {
-    fill: #283645;
+    fill: $color-main;
     fill-opacity: 0.3;
   }
 }
@@ -34,5 +34,5 @@
 .copyright__link svg {
   width: 27px;
   height: 34.09px;
-  fill: #d22856;
+  fill: $color-secondary;
 }

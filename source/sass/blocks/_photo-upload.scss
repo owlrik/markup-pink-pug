@@ -35,10 +35,10 @@
 }
 
 .photo-upload__wrap {
-  background-color: #f2f2f2;
+  background-color: $gray--lighten;
 
   @media (min-width: $screen-large) {
-    background-color: #ffffff;
+    background-color: $white;
   }
 }
 
@@ -71,7 +71,7 @@
     justify-content: space-between;
     padding-right: 60px;
     padding-left: 80px;
-    background-color: #f2f2f2;
+    background-color: $gray--lighten;
   }
 }
 
@@ -134,7 +134,7 @@
       right: -20px;
       left: -20px;
       height: 1px;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: rgba($black, 0.1);
     }
   }
 }
@@ -144,7 +144,8 @@
   &[id="toggle-crop"]:checked ~ .range .range__icon--crop svg,
   &[id="toggle-fill"]:checked ~ .range .range__icon--fill svg,
   &[id="toggle-contrast"]:checked ~ .range .range__icon--contrast svg {
-    fill: #d22856;
+    fill: $color-secondary;
+    fill-opacity: 1;
   }
 
   &[id="toggle-crop"]:checked ~ .range .range__input--crop,
@@ -180,7 +181,7 @@
       bottom: 0;
       left: 0;
       height: 1px;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: rgba($black, 0.1);
     }
   }
 }

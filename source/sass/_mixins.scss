@@ -2,7 +2,7 @@
   box-sizing: border-box;
   width: $track-w;
   height: $track-h;
-  background-color: #283645;
+  background-color: $color-main;
   border: none;
 }
 
@@ -10,7 +10,7 @@
   box-sizing: border-box;
   width: $thumb-d;
   height: $thumb-d;
-  background-color: #f2f2f2;
-  border: 2px solid #d22856;
+  background-color: $gray--lighten;
+  border: 2px solid $color-secondary;
   border-radius: 50%;
 }

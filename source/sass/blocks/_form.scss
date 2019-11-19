@@ -14,7 +14,7 @@
   @media (min-width: $screen-medium) {
     width: 100%;
     margin-bottom: 56px;
-    border: 2px solid #e5e5e5;
+    border: 2px solid $gray--light;
     border-radius: 2px;
   }
 
@@ -332,9 +332,9 @@
   padding: 13px 20px;
   font-size: 18px;
   line-height: 30px;
-  color: #283645;
-  background-color: #ffffff;
-  border: 2px solid #e5e5e5;
+  color: $color-main;
+  background-color: $white;
+  border: 2px solid $gray--light;
   border-radius: 2px;
   outline: 0;
 
@@ -343,11 +343,11 @@
   }
 
   &:hover {
-    border-color: #283645;
+    border-color: $color-main;
   }
 
   &:focus {
-    border-color: #d22856;
+    border-color: $color-secondary;
   }
 }
 
@@ -378,7 +378,7 @@
   display: block;
   font-size: 14px;
   line-height: 30px;
-  color: #283645;
+  color: $color-main;
   text-align: center;
   text-transform: uppercase;
 }
@@ -386,7 +386,7 @@
 .form__note sup {
   top: 0;
   font-size: 14px;
-  color: #d22856;
+  color: $color-secondary;
 }
 
 .form__note span {

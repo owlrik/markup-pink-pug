@@ -6,7 +6,7 @@
   display: inline-block;
   font-size: 14px;
   line-height: 30px;
-  color: #d22856;
+  color: $color-secondary;
   text-transform: uppercase;
 }
 
@@ -16,21 +16,21 @@
   padding: 5px 20px;
   font-size: 18px;
   line-height: 30px;
-  color: #283645;
-  background-color: #ffffff;
-  border: 2px solid #e5e5e5;
+  color: $color-main;
+  background-color: $white;
+  border: 2px solid $gray--light;
   border-radius: 2px;
   outline: 0;
 
   &:hover {
-    border-color: #283645;
+    border-color: $color-main;
   }
 
   &:focus {
-    border-color: #d22856;
+    border-color: $color-secondary;
   }
 
   &--invalid {
-    border-color: #d22856;
+    border-color: $color-secondary;
   }
 }

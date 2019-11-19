@@ -1,13 +1,13 @@
 .research {
   display: none;
-  background-color: #ffffff;
+  background-color: $body-bg;
 
   @media (min-width: $screen-medium) {
     display: block;
   }
 
   @media (min-width: $screen-large) {
-    background-color: #f2f2f2;
+    background-color: $body-bg--gray;
   }
 }
 
@@ -67,7 +67,7 @@
   font-weight: 700;
   font-size: 30px;
   line-height: 1.2;
-  color: #000000;
+  color: $black;
 
   @media (min-width: $screen-large) {
     margin-bottom: 24px;
@@ -93,14 +93,14 @@
 }
 
 .research__link {
-  color: #d22856;
+  color: $color-secondary;
 
   &:hover,
   &:focus {
-    color: #283645;
+    color: $color-main;
   }
 
   &:active {
-    color: rgba(40, 54, 69, 0.3);
+    color: rgba($color-main, 0.3);
   }
 }

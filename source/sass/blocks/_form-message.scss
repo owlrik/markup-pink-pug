@@ -1,7 +1,7 @@
 .form-message {
   padding-top: 40px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: $white;
   box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
 
   @media (min-width: $screen-large) {
@@ -16,7 +16,7 @@
 .form-message--success .form-message__button-wrapper {
   padding-top: 48px;
   padding-bottom: 52px;
-  background-color: #f2f2f2;
+  background-color: $gray--lighten;
 }
 
 .form-message--success .form-message__button {
@@ -36,7 +36,7 @@
   @media (min-width: $screen-large) {
     padding-top: 48px;
     padding-bottom: 52px;
-    background-color: #f2f2f2;
+    background-color: $gray--lighten;
   }
 }
 
@@ -46,7 +46,7 @@
   margin: 0 auto 25px;
   font-weight: 700;
   font-size: 18px;
-  color: #000000;
+  color: $black;
 
   @media (min-width: $screen-medium) {
     max-width: 320px;

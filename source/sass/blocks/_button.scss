@@ -8,13 +8,13 @@
   line-height: 18px;
   vertical-align: middle;
   text-align: center;
-  color: #d22856;
+  color: $color-secondary;
   text-transform: none;
   text-decoration: none;
   white-space: normal;
   overflow-wrap: normal;
   background-color: transparent;
-  border: 3px solid #d22856;
+  border: 3px solid $color-secondary;
   border-radius: 27px;
   cursor: pointer;
   //user-select: none;
@@ -29,48 +29,48 @@
 
   &:hover,
   &:focus {
-    color: #ffffff;
-    background-color: #d22856;
+    color: $white;
+    background-color: $color-secondary;
   }
 
   &:active {
-    color: rgba(255, 255, 255, 0.3);
-    background-color: #d22856;
+    color: rgba($white, 0.3);
+    background-color: $color-secondary;
   }
 
   &--grey {
-    color: #283645;
-    border-color: #283645;
+    color: $color-main;
+    border-color: $color-main;
     opacity: 0.1;
 
     &:hover,
     &:focus {
-      color: #283645;
+      color: $color-main;
       background-color: transparent;
-      border-color: #283645;
+      border-color: $color-main;
       opacity: 0.3;
     }
 
     &:active {
-      color: #ffffff;
-      background-color: #283645;
+      color: $white;
+      background-color: $color-main;
       opacity: 0.3;
     }
   }
 
   &--white {
-    color: #ffffff;
-    border-color: #ffffff;
+    color: $white;
+    border-color: $white;
 
     &:hover,
     &:focus {
-      color: #d22856;
-      background-color: #ffffff;
+      color: $color-secondary;
+      background-color: $white;
     }
 
     &:active {
-      color: rgba(210, 40, 86, 0.3);
-      background-color: #ffffff;
+      color: rgba($color-secondary, 0.3);
+      background-color: $white;
     }
   }
 
@@ -87,28 +87,28 @@
   }
 
   &--green {
-    color: #ffffff;
-    background-color: #2aab6d;
-    border-color: #2aab6d;
+    color: $white;
+    background-color: $color-confirm;
+    border-color: $color-confirm;
     border-radius: 2px;
 
     &:hover,
     &:focus {
-      background-color: #1c9b5e;
-      border-color: #1c9b5e;
+      background-color: $color-confirm--dark;
+      border-color: $color-confirm--dark;
     }
 
     &:active {
-      color: rgba(255, 255, 255, 0.7);
-      background-color: #1c9b5e;
-      border-color: #1c9b5e;
+      color: rgba($white, 0.3);
+      background-color: $color-confirm--dark;
+      border-color: $color-confirm--dark;
     }
 
     &:disabled,
     &--disabled {
-      color: #ffffff;
-      background-color: #e5e5e5;
-      border-color: #e5e5e5;
+      color: $white;
+      background-color: $gray--light;
+      border-color: $gray--light;
     }
 
     &:disabled:not(a),

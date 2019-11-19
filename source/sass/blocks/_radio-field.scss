@@ -11,7 +11,7 @@
 }
 
 .radio-field__input:focus + .radio-field__label::before {
-  box-shadow: 0 0 0 2px #283645;
+  box-shadow: 0 0 0 2px $color-main;
 }
 
 .radio-field__input:checked + .radio-field__label {
@@ -31,7 +31,7 @@
   padding-left: 70px;
   font-size: 18px;
   line-height: 30px;
-  color: #283645;
+  color: $color-main;
 
   @media (min-width: $screen-medium) {
     padding-left: 56px;
@@ -42,7 +42,7 @@
   }
 
   &:hover::before {
-    box-shadow: 0 0 0 2px #283645;
+    box-shadow: 0 0 0 2px $color-main;
   }
 
   &:active::before {
@@ -57,10 +57,10 @@
     left: 2px;
     width: 35px;
     height: 35px;
-    background-color: #ffffff;
-    border: 10px solid #ffffff;
+    background-color: $white;
+    border: 10px solid $white;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px #e5e5e5;
+    box-shadow: 0 0 0 2px $gray--light;
     transform: translateY(-50%);
   }
 }

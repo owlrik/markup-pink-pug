@@ -1,37 +1,47 @@
-/* Colors */
-$body-bg: #ffffff;
-$body-bg--grey: #f2f2f2;
-$body-bg--dark: #1d2631;
-$text-color: #283645;
-$nav-link-color: #ffffff;
-//$link-color--hover;
-//$link-color--visited;
-//$link-color--active;
+// Color system
 
-/* Components colors */
-/* button etc */
+// General
+$white: #ffffff;
+$gray: #808080;
+$gray--light: #e5e5e5;
+$gray--lighten: #f2f2f2;
+$black: #000000;
 
-/* Fonts */
+$color-main: #283645;
+$color-main--dark: #1d2631;
+$color-secondary: #d22856;
+$color-confirm: #2aab6d;
+$color-confirm--dark: #1c9b5e;
+
+// Body
+$text-color: $color-main;
+
+$body-bg: $white;
+$body-bg--gray: $gray--lighten;
+
+
+// Typography
+
+// Fonts
+$font-size: 14px;
 $font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
-$font-size--root: 16px;
-$font-size: 0.875rem;
-$font-size--big: 1.125rem;
-//$font-size--small;
-//$font-size--h1; etc
-$line-height--base: 1.6;
-$line-height--big: 1.777;
-//$line-height--h1;
-//$line-height--h2 etc;
 
-/* Components */
+
+// Components
+
+// Photo upload settings track
 $track-w: 100%;
 $track-h: 2px;
 $thumb-d: 14px;
 
-/* Breakpoints */
+
+// Breakpoints
+
+// Screen sizes
 $screen-small: 320px;
 $screen-medium: 660px;
 $screen-large: 960px;
 
+// Resolutions
 $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;

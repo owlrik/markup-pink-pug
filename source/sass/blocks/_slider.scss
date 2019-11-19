@@ -46,23 +46,26 @@
 
   &:hover svg,
   &:focus svg {
-    fill: rgba(40, 54, 69, 0.6);
+    fill: $color-main;
+    fill-opacity: 0.6;
   }
 
   &:active svg {
-    fill: rgba(40, 54, 69, 0.1);
+    fill: $color-main;
+    fill-opacity: 0.1;
   }
 
   &:disabled svg,
   &--disabled svg {
-    fill: #e5e5e5;
+    fill: $gray--light;
     cursor: not-allowed;
   }
 
   & svg {
     position: absolute;
     top: 30px;
-    fill: rgba(40, 54, 69, 0.3);
+    fill: $color-main;
+    fill-opacity: 0.3;
   }
 
   &--prev,
@@ -116,22 +119,22 @@
   height: 6px;
   font-size: 0;
   vertical-align: middle;
-  background-color: rgba(40, 54, 69, 0.3);
+  background-color: rgba($color-main, 0.3);
   border-radius: 50%;
 }
 
 .slider__control:hover span,
 .slider__control:focus span {
-  background-color: rgba(40, 54, 69, 0.6);
+  background-color: rgba($color-main, 0.6);
 }
 
 .slider__control:active span {
-  background-color: rgba(40, 54, 69, 0.1);
+  background-color: rgba($color-main, 0.1);
 }
 
 .slider__control--active span {
   background-color: transparent;
-  box-shadow: 0 0 0 3px #283645;
+  box-shadow: 0 0 0 3px $color-main;
 }
 
 .slider__control--active:hover span,

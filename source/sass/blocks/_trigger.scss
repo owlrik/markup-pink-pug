@@ -19,7 +19,7 @@
   display: block;
   width: 50px;
   height: 4px;
-  background-color: #ffffff;
+  background-color: $white;
   transform: translateY(-50%);
 
   &::before,
@@ -30,7 +30,7 @@
     display: block;
     width: 50px;
     height: 4px;
-    background-color: #ffffff;
+    background-color: $white;
   }
 
   &::before {
@@ -45,17 +45,17 @@
 .trigger:hover > span,
 .trigger:hover > span::before,
 .trigger:hover > span::after {
-  background-color: #d22856;
+  background-color: $color-secondary;
 }
 
 .trigger:focus > span,
 .trigger:focus > span::before,
 .trigger:focus > span::after {
-  background-color: #d22856;
+  background-color: $color-secondary;
 }
 
 .trigger:active > span,
 .trigger:active > span::before,
 .trigger:active > span::after {
-  background-color: rgba(210, 40, 86, 0.3);
+  background-color: rgba($color-secondary, 0.3);
 }

@@ -7,11 +7,11 @@
   }
 
   &--closed {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba($black, 0.3);
   }
 
   &--opened {
-    background-color: #283645;
+    background-color: $color-main;
   }
 
   &--closed .main-nav__list {
@@ -99,8 +99,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  background-color: #283645;
-  border-top: 1px solid #000000;
+  background-color: $color-main;
+  border-top: 1px solid $black;
 
   @media (min-width: $screen-large) {
     display: flex;
@@ -115,11 +115,11 @@
 .main-nav__list a[href] {
   &:hover,
   &:focus {
-    color: #d22856;
+    color: $color-secondary;
   }
 
   &:active {
-    color: #ffffff;
+    color: $white;
     opacity: 0.3;
   }
 }
@@ -129,14 +129,14 @@
   display: block;
   padding: 15px 20px 15px;
   font-weight: 700;
-  font-size: $font-size--big;
+  font-size: 18px;
   line-height: 32px;
-  color: $nav-link-color;
+  color: $white;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  border-bottom: 1px solid #000000;
+  border-top: 1px solid rgba($white, 0.15);
+  border-bottom: 1px solid $black;
 
   @media (min-width: $screen-large) {
     padding-right: 0;
@@ -156,7 +156,7 @@
       right: 0;
       left: 0;
       height: 2px;
-      background-color: #ffffff;
+      background-color: $white;
     }
   }
 }

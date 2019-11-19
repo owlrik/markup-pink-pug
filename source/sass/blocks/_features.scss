@@ -1,12 +1,12 @@
 .features {
   text-align: center;
-  background-color: #f2f2f2;
+  background-color: $body-bg--gray;
 }
 
 .features__header {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #ffffff;
+  background-color: $body-bg;
 
   @media (min-width: $screen-medium) {
     padding-top: 50px;
@@ -117,7 +117,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
+  color: $black;
 
   @media (min-width: $screen-large) {
     margin-bottom: 25px;

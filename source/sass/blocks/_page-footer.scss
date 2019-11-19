@@ -1,5 +1,5 @@
 .page-footer {
-  background-color: #ffffff;
+  background-color: $white;
 
   &--home {
     @media (max-width: $screen-medium - 1) {
@@ -68,5 +68,5 @@
 }
 
 .page-footer a {
-  color: #283645;
+  color: $color-main;
 }

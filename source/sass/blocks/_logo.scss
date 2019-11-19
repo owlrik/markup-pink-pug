@@ -9,7 +9,7 @@
 
   &[href]:hover .logo__img,
   &[href]:focus .logo__img {
-    fill: #d22856;
+    fill: $color-secondary;
   }
 
   &[href]:active .logo__img {
@@ -17,11 +17,11 @@
   }
 
   &--white .logo__img {
-    fill: #ffffff;
+    fill: $white;
   }
 
   &--blue .logo__img {
-    fill: #283645;
+    fill: $color-main;
   }
 }
 

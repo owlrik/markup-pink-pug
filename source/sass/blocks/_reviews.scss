@@ -1,7 +1,7 @@
 .reviews {
   padding-top: 45px;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: $body-bg;
 
   @media (min-width: $screen-medium) {
     padding-top: 47px;
@@ -55,7 +55,7 @@
     order: 2;
     margin-bottom: 2px;
     font-size: 20px;
-    color: #000000;
+    color: $black;
   }
 
   @media (min-width: $screen-large) {

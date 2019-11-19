@@ -2,8 +2,8 @@
   width: 280px;
   font-size: 14px;
   line-height: 24px;
-  color: #283645;
-  background-color: #f2f2f2;
+  color: $color-main;
+  background-color: $gray--lighten;
 
   @media (min-width: $screen-medium) {
     width: 300px;
@@ -28,9 +28,9 @@
     font-size: 12px;
     line-height: 24px;
     text-align: center;
-    color: #ffffff;
+    color: $white;
     text-transform: uppercase;
-    background-color: #d22856;
+    background-color: $color-secondary;
 
     @media (min-width: $screen-medium) {
       top: 57px;
@@ -62,7 +62,7 @@
   &--panorama {
     max-width: 280px;
     margin: 0 auto;
-    background-color: #f2f2f2;
+    background-color: $gray--lighten;
 
     @media (min-width: $screen-medium) {
       flex-flow: row wrap;
@@ -146,17 +146,18 @@
   }
 
   &:active svg {
-    fill: rgba(210, 40, 86, 0.3);
+    fill: $color-secondary;
+    fill-opacity: 0.3;
   }
 }
 
 .post__like svg {
-  fill: #d22856;
+  fill: $color-secondary;
 }
 
 .post__likes-count {
   margin: 0;
   font-size: 12px;
-  color: #d22856;
+  color: $color-secondary;
   text-transform: uppercase;
 }
