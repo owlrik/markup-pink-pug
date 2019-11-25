@@ -87,7 +87,8 @@
 
 .slider__inner {
   display: flex;
-  width: 300%;
+  width: 300%;  // TODO : перенести ширину за каскад от родительского блока - ширины мб разные
+  transition: transform 0.25s;
 }
 
 .slider__item {

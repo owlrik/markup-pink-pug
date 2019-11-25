@@ -3,6 +3,7 @@
   text-align: center;
   background-color: $white;
   box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
+  animation: dropdown 0.6s;
 
   @media (min-width: $screen-large) {
     padding-top: 45px;

@@ -46,11 +46,13 @@
   &--opened .trigger > span {
     width: 28px;
     background-color: transparent;
+    transition: background 0.3s 0s;
 
     &::before,
     &::after {
       top: 0;
       width: 28px;
+      transition: top 0.3s, transform 0.3s 0.5s;
     }
 
     &::before {
