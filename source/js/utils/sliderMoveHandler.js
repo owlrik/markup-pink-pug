@@ -1,6 +1,19 @@
 (function() {
   'use strict';
 
+  const UtilityCheck = function() {
+  };
+
+  UtilityCheck.prototype.isMobile = function(maxWidth) {
+    return window.matchMedia("(max-width: " + maxWidth + "px )").matches;
+  };
+
+  UtilityCheck.prototype.isTouchDevice = function() {
+    return "ontouchstart" in window || "DocumentTouch" in window && document instanceof DocumentTouch;
+  };
+
+  let envCheck = new UtilityCheck();
+
   const Carousel = function(slider) {
     let self = this;
 
@@ -10,6 +23,7 @@
     this.togglerPrev = slider.querySelector('.slider__toggler--prev');
     this.togglerNext = slider.querySelector('.slider__toggler--next');
     this.controls = slider.querySelectorAll('.slider__control');
+    this.offset = 0;
 
     this.hasTogglers = this.togglerPrev && this.togglerNext;
 
@@ -20,6 +34,20 @@
 
       this.togglerNext.addEventListener('click', function () {
         self.toggle(true);
+      });
+    }
+
+    if (envCheck.isTouchDevice()) {
+      this.slider.addEventListener('touchstart', function (evt) {
+        self.onTouchStart(evt);
+      });
+
+      this.slider.addEventListener('touchmove', function (evt) {
+        self.onTouchMove(evt);
+      });
+
+      this.slider.addEventListener('touchend', function (evt) {
+        self.onTouchEnd(evt);
       });
     }
 
@@ -119,8 +147,56 @@
       let realItemOffset = (itemOffset < rightBound) ? rightBound : itemOffset;
       realItemOffset = (realItemOffset > leftBound) ? leftBound : realItemOffset;
 
+      this.offset = realItemOffset;
+
       let offsetPercent = 100 * realItemOffset / this.innerContainer.offsetWidth * 10 / 10;
       this.innerContainer.style.transform = 'translateX(' + offsetPercent + '%)';
+  };
+
+  Carousel.prototype.onTouchStart = function(evt) {
+    if (evt.touches.length === 1) {
+      let sliderTouch = evt.touches[0];
+      this.slider.classList.add('slider--touching');
+      this.initialOffset = this.offset;
+      this.initialX = sliderTouch.screenX;
+      this.initialY = sliderTouch.screenY;
+    } else {
+      this.slider.classList.remove('slider--touching');
+    }
+  };
+
+  Carousel.prototype.onTouchMove = function(evt) {
+    if (this.isTouching()) {
+      let sliderTouch = evt.touches[0];
+      let touchOffsetX = sliderTouch.screenX - this.initialX;
+      let touchOffsetY = sliderTouch.screenY - this.initialY;
+
+      if (Math.abs(touchOffsetX) > Math.abs(touchOffsetY)) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        this.move(this.initialOffset + touchOffsetX);
+      } else {
+        this.slider.classList.remove('slider--touching');
+      }
+    }
+  };
+
+  Carousel.prototype.onTouchEnd = function(evt) {
+    if (this.isTouching()) {
+      this.slider.classList.remove('slider--touching');
+      let offset = this.offset - this.initialOffset;
+      const SWIPE_THRESHOLD = 100;
+
+      if (Math.abs(offset) < SWIPE_THRESHOLD) {
+        this.toggleTo(this.getActiveIndex());
+      } else {
+        offset < 0 ? this.toggle(true) : this.toggle(false);
+      }
+    }
+  };
+
+  Carousel.prototype.isTouching = function() {
+    return this.slider.classList.contains('slider--touching');
   };
 
   let sliderReviews = document.querySelector('.reviews__slider');
@@ -129,17 +205,67 @@
   }
 
   const MonoSlider = function(slider) {
+    let self = this;
+
     this.slider = slider;
     this.innerContainer = slider.querySelector('.prices-table');
+    this.slides = this.getPseudoSlides();
+    this.togglerPrev = slider.querySelector('.slider__toggler--prev');
+    this.togglerNext = slider.querySelector('.slider__toggler--next');
     this.controls = slider.querySelectorAll('.slider__control');
+    this.offset = 0;
+
+    this.hasTogglers = this.togglerPrev && this.togglerNext;
+
+    if (envCheck.isTouchDevice() && envCheck.isMobile(659)) {
+      this.slider.addEventListener('touchstart', function (evt) {
+        self.onTouchStart(evt);
+      });
+
+      this.slider.addEventListener('touchmove', function (evt) {
+        self.onTouchMove(evt);
+      });
+
+      this.slider.addEventListener('touchend', function (evt) {
+        self.onTouchEnd(evt);
+      });
+    }
 
     this.initControls(this.controls);
+  };
+
+  MonoSlider.prototype = Object.create(Carousel.prototype);
+
+  MonoSlider.prototype.getSlideWidth = function() {
+    let sliderFrame = this.slider.querySelector('.slider__overflow-wrap');
+    let sliderFrameStyles = window.getComputedStyle(sliderFrame);
+    let sliderFramePadding = parseFloat(sliderFrameStyles.paddingRight) + parseFloat(sliderFrameStyles.paddingLeft);
+
+    return sliderFrame.clientWidth - sliderFramePadding;
+  };
+
+  MonoSlider.prototype.getSlidesCount = function() {
+    return this.innerContainer.clientWidth / this.getSlideWidth();
+  };
+
+  MonoSlider.prototype.getPseudoSlides = function() {
+    let slidesCount = this.getSlidesCount();
+    let slideWidth = this.getSlideWidth();
+
+    let pseudoSlides = [];
+    for (let i = 0; i < slidesCount; i++) {
+      pseudoSlides.push({
+        offsetLeft: slideWidth * i
+      });
+    }
+
+    return pseudoSlides;
   };
 
   MonoSlider.prototype.initControls = function(controls) {
     let self = this;
 
-    if (controls.length > 0) {
+    if (envCheck.isMobile(659) && controls.length > 0) {
       controls.forEach(function (control) {
         control.addEventListener('click', function (evt) {
           self.controlOnClick(evt.currentTarget);
@@ -148,42 +274,11 @@
     }
   };
 
-  MonoSlider.prototype.controlOnClick = function(control) {
-    let newSlideIndex = [].indexOf.call(this.controls, control);
-    this.toggleTo(newSlideIndex);
-  };
-
-  MonoSlider.prototype.toggleTo = function(index) {
-    this.setActiveControls(index);
-    this.moveTo(index);
-  };
-
-  MonoSlider.prototype.setActiveControls = function(index) {
-    this.configureControls(this.controls, 'slider__control--active', index);
-  };
-
-  MonoSlider.prototype.configureControls = function(sliderControls, activeClassName, index) {
-    for (let i = 0; i < sliderControls.length; i++) {
-      let currentControl = sliderControls[i];
-      currentControl.classList.remove(activeClassName);
-    }
-
-    let activeControl = sliderControls[index];
-    activeControl.classList.add(activeClassName);
-  };
-
-  MonoSlider.prototype.moveTo = function(index) {
-    let slideOffset = this.innerContainer.offsetWidth / this.controls.length * index;
-    this.move(-slideOffset);
-  };
-
-  MonoSlider.prototype.move = function(itemOffset) {
-    let offsetPercent = 100 * itemOffset / this.innerContainer.offsetWidth * 10 / 10;
-    this.innerContainer.style.transform = 'translateX(' + offsetPercent + '%)';
-  };
-
   let sliderPrices = document.querySelector('.prices__slider');
   if (sliderPrices) {
     let pricesSlider = new MonoSlider(sliderPrices);
+    if (envCheck.isMobile(659)) {
+      pricesSlider.toggleTo(1);
+    }
   }
 })();

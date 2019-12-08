@@ -3,9 +3,7 @@
   table-layout: fixed;
   border-collapse: collapse;
 
-  // TODO: этот transform дб в js
   @media (max-width: $screen-medium - 1) {
-    transform: translateX(-33.33%);
     transition: transform 0.25s;
   }
 
