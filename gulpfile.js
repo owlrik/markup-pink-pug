@@ -50,13 +50,13 @@ function processHtml() {
 exports.processHtml = processHtml;
 
 function buildJs() {
-  return src(['source/js/lib/**/*.js', 'source/js/utils/**/*.js', 'source/js/script.js'])
+  return src(['source/js/lib/**/*.js', 'source/js/utils/**/*.js', 'source/js/script.js'], { sourcemaps: true })
     .pipe(plumber())
     .pipe(concat('script.js'))
     .pipe(dest('build/js'))
     .pipe(terser())
     .pipe(rename('script.min.js'))
-    .pipe(dest('build/js'))
+    .pipe(gulpIf(isDev, dest('build/js', { sourcemaps: '.' }), dest('build/js')));
 }
 exports.buildJs = buildJs;
 
