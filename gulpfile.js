@@ -18,12 +18,15 @@ const svgstore = require('gulp-svgstore');
 
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
+const gulpIf = require('gulp-if');
 const del = require('del');
 
 const server = require('browser-sync').create();
 
+let isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'dev';
+
 function processSass() {
-  return src('source/sass/style.scss')
+  return src('source/sass/style.scss', { sourcemaps: true })
     .pipe(plumber())
     .pipe(sass())
     .pipe(postcss([
@@ -32,8 +35,8 @@ function processSass() {
     .pipe(dest('build/css'))
     .pipe(csso())
     .pipe(rename('style.min.css'))
-    .pipe(dest('build/css'))
-    .pipe(server.stream());
+    .pipe(gulpIf(isDev, dest('build/css', { sourcemaps: '.' }), dest('build/css')))
+    .pipe(gulpIf(isDev, server.stream()));
 }
 exports.processSass = processSass;
 

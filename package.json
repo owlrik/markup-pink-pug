@@ -7,10 +7,12 @@
     "@htmlacademy/editorconfig-cli": "^1.0.0",
     "autoprefixer": "^9.6.5",
     "browser-sync": "^2.26.7",
+    "cross-env": "^6.0.3",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.1",
+    "gulp-if": "^3.0.0",
     "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
@@ -26,7 +28,7 @@
   },
   "scripts": {
     "start": "gulp",
-    "build": "gulp build",
+    "build": "cross-env NODE_ENV=production gulp build",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "editorconfig": "editorconfig-cli",
     "test": "npm run editorconfig && npm run stylelint"
