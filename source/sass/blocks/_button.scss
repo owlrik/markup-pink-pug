@@ -3,6 +3,7 @@
   display: inline-block;
   max-width: 300px;
   padding: 14px 15px 17px;
+  overflow: hidden;
   font-weight: 700;
   font-size: 18px;
   line-height: 18px;
@@ -13,19 +14,13 @@
   text-decoration: none;
   white-space: normal;
   overflow-wrap: normal;
+  text-overflow: ellipsis;
   background-color: transparent;
   border: 3px solid $color-secondary;
   border-radius: 27px;
   cursor: pointer;
-  //user-select: none;
-  //touch-action: manipulation;
-
-  @media (min-width: $screen-large) {
-    //padding-top: 13px;
-    //padding-bottom: 15px;
-    //font-size: 21px;
-    //line-height: 21px;
-  }
+  user-select: none;
+  touch-action: manipulation;
 
   &:hover,
   &:focus {
