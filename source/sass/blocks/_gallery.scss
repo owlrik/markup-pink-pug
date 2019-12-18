@@ -59,6 +59,14 @@
   margin-left: -10px;
 }
 
+.gallery__layout .gallery__item {
+  @media (min-width: $screen-small--wide) and (max-width: $screen-large - 1) {
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .gallery__item {
   max-width: 300px;
   margin-bottom: 20px;
@@ -73,8 +81,10 @@
     margin-bottom: 54px;
   }
 
-  &:last-child {
-    margin-bottom: 0;
+  @media (max-width: $screen-large - 1) {
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &--panorama {
@@ -83,7 +93,8 @@
     padding-left: 0;
 
     @media (min-width: $screen-medium) {
-      margin-bottom: 50px;
+      max-width: 1200px;
+      margin: 0 auto 50px;
     }
   }
 }

@@ -5,6 +5,12 @@
   color: $color-main;
   background-color: $gray--lighten;
 
+  @media (min-width: $screen-small--wide) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
   @media (min-width: $screen-medium) {
     width: 300px;
   }
@@ -20,7 +26,7 @@
     content: "Панорама дня";
     position: absolute;
     top: 0;
-    left: 50%;
+    right: 20px;
     display: block;
     min-width: 140px;
     padding: 6px 20px;
@@ -34,12 +40,34 @@
 
     @media (min-width: $screen-medium) {
       top: 57px;
-      left: 75.75%;
     }
 
     @media (min-width: $screen-large) {
-      left: 77.5%;
+      right: 130px;
     }
+  }
+}
+
+.post__link {
+  display: block;
+  overflow: hidden;
+  width: 280px;
+  height: 180px;
+  color: $white;
+  text-decoration: none;
+
+  @media (min-width: $screen-medium) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media (min-width: $screen-large) {
+    height: 400px;
+  }
+
+  &--panorama {
+    width: auto;
+    height: auto;
   }
 }
 
@@ -54,6 +82,10 @@
   flex-direction: column;
   padding: 18px 18px 20px;
 
+  @media (min-width: $screen-small--wide) {
+    flex-grow: 1;
+  }
+
   @media (min-width: $screen-medium) {
     min-height: 155px;
     padding: 24px 27px 22px;
@@ -63,6 +95,10 @@
     max-width: 280px;
     margin: 0 auto;
     background-color: $gray--lighten;
+
+    @media (min-width: $screen-small--wide) {
+      max-width: 580px;
+    }
 
     @media (min-width: $screen-medium) {
       flex-flow: row wrap;
@@ -120,6 +156,10 @@
 .post__likes {
   position: relative;
   padding-left: 30px;
+
+  @media (min-width: $screen-small--wide) {
+    margin-top: auto;
+  }
 
   @media (min-width: $screen-medium) {
     margin-top: auto;
