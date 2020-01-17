@@ -1,0 +1,62 @@
+.logo-pink {
+  //
+}
+
+.logo-pink--word-only .logo-pink__word {
+  transform: translate(-72px, -17px);
+
+  @media (min-width: $screen-medium) {
+    transform: translate(0, 0);
+  }
+}
+
+.logo-pink--dark .logo-pink__glasses {
+  fill: $color-secondary;
+}
+
+.logo-pink--dark .logo-pink__star {
+  fill: $color-main;
+
+  &--with-letter {
+    fill: $color-secondary;
+  }
+}
+
+.logo-pink--show-glasses .logo-pink__glasses {
+  &--without-stars {
+    display: inline;
+
+    @media (min-width: $screen-large) {
+      display: none;
+    }
+  }
+}
+
+.logo-pink__glasses {
+  display: none;
+
+  &--without-stars {
+    @media (min-width: $screen-medium) {
+      display: inline;
+    }
+
+    @media (min-width: $screen-large) {
+      display: none;
+    }
+  }
+
+  &--with-stars {
+    @media (min-width: $screen-large) {
+      display: inline;
+    }
+  }
+}
+
+.logo-pink__star {
+  display: none;
+
+  @media (min-width: $screen-large) {
+    display: inline;
+    fill: $color-secondary;
+  }
+}

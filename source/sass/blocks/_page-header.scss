@@ -88,3 +88,9 @@
     }
   }
 }
+
+.page-header a {
+  &:not(.button) {
+    color: $white;
+  }
+}

@@ -32,25 +32,21 @@
   display: block;
   width: 147px;
   height: 40px;
-  margin: 0;
-  margin-bottom: 40px;
+  margin: 0 0 40px;
 
   @media (min-width: $screen-medium) {
     align-self: flex-start;
     margin-bottom: 0;
   }
-}
 
-.page-footer__logo .logo__img--medium {
-  margin: 0;
-
-  @media (max-width: $screen-large - 1) {
-    display: block;
+  &[href]:hover .logo-pink,
+  &[href]:focus .logo-pink {
+    fill: $color-secondary;
   }
-}
 
-.page-footer__logo .logo__img--large {
-  margin: 0;
+  &[href]:active .logo-pink {
+    opacity: 0.3;
+  }
 }
 
 .page-footer__social {

@@ -87,6 +87,36 @@
   }
 }
 
+.main-nav__logo {
+  display: flex;
+  flex: 0 0 auto;
+  height: 66px;
+  color: $white;
+
+  @media (min-width: $screen-medium) {
+    height: 110px;
+  }
+
+  &[href]:hover .logo-pink,
+  &[href]:focus .logo-pink {
+    fill: $color-secondary;
+  }
+
+  &[href]:active .logo-pink {
+    opacity: 0.3;
+  }
+}
+
+.main-nav__logo-pink {
+  margin: auto 0;
+
+  @media (min-width: $screen-medium) {
+    width: 147px;
+    height: 40px;
+    margin: 27px 0 43px;
+  }
+}
+
 .main-nav__trigger {
   position: absolute;
   top: 0;
