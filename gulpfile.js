@@ -9,6 +9,7 @@ const csso = require('gulp-csso');
 
 const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
+const htmlmin = require('gulp-htmlmin');
 
 const terser = require('gulp-terser');
 const concat = require('gulp-concat');
@@ -42,9 +43,9 @@ exports.processSass = processSass;
 
 function processHtml() {
   return src('source/*.html')
-    .pipe(posthtml([
-      include()
-    ]))
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(dest('build'));
 }
 exports.processHtml = processHtml;
