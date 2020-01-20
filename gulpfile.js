@@ -67,7 +67,7 @@ function copyFonts() {
 exports.copyFonts = copyFonts;
 
 function copyImg() {
-  return src('source/img/**/*.{jpg,jpeg,png,svg,webp}')
+  return src(['source/img/**/*.{jpg,jpeg,png,svg,webp}', '!source/img/sprites/**/*.{jpg,jpeg,png,svg,webp}'])
     .pipe(imagemin([
       imagemin.jpegtran({progressive: true}),
       imagemin.optipng({optimizationLevel: 3}),
@@ -78,12 +78,12 @@ function copyImg() {
 exports.copyImg = copyImg;
 
 function generateSvgSprite() {
-  return src('source/img/{icon-*.svg,logo-*.svg}')
+  return src('source/img/sprites/svg/*.svg')
     .pipe(svgstore({
       inlineSvg: true
     }))
     .pipe(rename('sprite.svg'))
-    .pipe(dest('build/img'));
+    .pipe(dest('build/img/sprites'));
 }
 exports.generateSvgSprite = generateSvgSprite;
 
@@ -109,8 +109,8 @@ function serve() {
   watch('source/sass/**/*.{scss,sass}', series(processSass));
   watch('source/*.html', series(processHtml, reload));
   watch('source/js/**/*.js', series(buildJs, reload));
-  watch(['source/img/**/*.{jpg,jpeg,png,svg,webp}', '!source/img/**/{icon-*.svg,logo-*.svg}'], series(copyImg, reload));
-  watch('source/img/**/{icon-*.svg,logo-*.svg}', series(generateSvgSprite, copyImg, reload));
+  watch(['source/img/**/*.{jpg,jpeg,png,svg,webp}', '!source/img/sprites/**/*.svg'], series(copyImg, reload));
+  watch('source/img/sprites/svg/*.svg', series(generateSvgSprite, reload));
   watch('source/fonts/**/*.{woff,woff2}', series(copyFonts, reload));
 }
 exports.serve = serve;

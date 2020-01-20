@@ -7,11 +7,6 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-  <!--posthtml-include for svg inline-->
-  <div style="display: none;">
-    <include src="build/img/sprite.svg"></include>
-  </div>
-
   <!--page header-->
   <header class="page-header  page-header--home">
 
@@ -89,8 +84,7 @@
               <a class="platforms__link  platforms__link--apple" href="#">
                 <span class="visually-hidden">Ссылка на Apple Store</span>
                 <svg width="46" height="57">
-<!--                  TODO: добавить к картинкам префикс icon--->
-                  <use xlink:href="img/sprite.svg#logo-apple"></use>
+                  <use xlink:href="img/sprites/sprite.svg#apple"></use>
                 </svg>
               </a>
             </li>
@@ -98,8 +92,7 @@
               <a class="platforms__link  platforms__link--android" href="#">
                 <span class="visually-hidden">Ссылка на Google Play</span>
                 <svg width="42" height="47">
-<!--                  TODO: добавить к картинкам префикс icon--->
-                  <use xlink:href="img/sprite.svg#logo-android"></use>
+                  <use xlink:href="img/sprites/sprite.svg#android"></use>
                 </svg>
               </a>
             </li>
@@ -107,8 +100,7 @@
               <a class="platforms__link  platforms__link--microsoft" href="#">
                 <span class="visually-hidden">Ссылка на Windows Store</span>
                 <svg width="44" height="42">
-<!--                  TODO: добавить к картинкам префикс icon--->
-                  <use xlink:href="img/sprite.svg#logo-microsoft"></use>
+                  <use xlink:href="img/sprites/sprite.svg#microsoft"></use>
                 </svg>
               </a>
             </li>
@@ -208,14 +200,14 @@
         <div class="slider__togglers">
           <button class="slider__toggler  slider__toggler--prev  button-image  button-image--arrow" type="button" disabled>
             <svg width="22" height="41">
-              <use xlink:href="img/sprite.svg#icon-review-arrow-left"></use>
+              <use xlink:href="img/sprites/sprite.svg#review-arrow-left"></use>
             </svg>
             <span class="visually-hidden">Предыдущий отзыв</span>
           </button>
 
           <button class="slider__toggler  slider__toggler--next  button-image  button-image--arrow" type="button">
             <svg width="22" height="41">
-              <use xlink:href="img/sprite.svg#icon-review-arrow-right"></use>
+              <use xlink:href="img/sprites/sprite.svg#review-arrow-right"></use>
             </svg>
             <span class="visually-hidden">Следующий отзыв</span>
           </button>
@@ -298,21 +290,21 @@
                 <td class="prices-table__cell" data-option="Розовый фильтр">
                   <span class="visually-hidden">Есть</span>
                   <svg width="31" height="21">
-                    <use xlink:href="img/sprite.svg#icon-yes"></use>
+                    <use xlink:href="img/sprites/sprite.svg#yes"></use>
                   </svg>
                 </td>
 
                 <td class="prices-table__cell" data-option="Розовый фильтр">
                   <span class="visually-hidden">Есть</span>
                   <svg width="31" height="21">
-                    <use xlink:href="img/sprite.svg#icon-yes"></use>
+                    <use xlink:href="img/sprites/sprite.svg#yes"></use>
                   </svg>
                 </td>
 
                 <td class="prices-table__cell" data-option="Розовый фильтр">
                   <span class="visually-hidden">Есть</span>
                   <svg width="31" height="21">
-                    <use xlink:href="img/sprite.svg#icon-yes"></use>
+                    <use xlink:href="img/sprites/sprite.svg#yes"></use>
                   </svg>
                 </td>
               </tr>
@@ -323,21 +315,21 @@
                 <td class="prices-table__cell" data-option="Смайлики">
                   <span class="visually-hidden">Нет</span>
                   <svg width="27" height="26">
-                    <use xlink:href="img/sprite.svg#icon-no"></use>
+                    <use xlink:href="img/sprites/sprite.svg#no"></use>
                   </svg>
                 </td>
 
                 <td class="prices-table__cell" data-option="Смайлики">
                   <span class="visually-hidden">Есть</span>
                   <svg width="31" height="21">
-                    <use xlink:href="img/sprite.svg#icon-yes"></use>
+                    <use xlink:href="img/sprites/sprite.svg#yes"></use>
                   </svg>
                 </td>
 
                 <td class="prices-table__cell" data-option="Смайлики">
                   <span class="visually-hidden">Есть</span>
                   <svg width="31" height="21">
-                    <use xlink:href="img/sprite.svg#icon-yes"></use>
+                    <use xlink:href="img/sprites/sprite.svg#yes"></use>
                   </svg>
                 </td>
               </tr>
@@ -348,21 +340,21 @@
                 <td class="prices-table__cell" data-option="Комментарии">
                   <span class="visually-hidden">Нет</span>
                   <svg width="27" height="26">
-                    <use xlink:href="img/sprite.svg#icon-no"></use>
+                    <use xlink:href="img/sprites/sprite.svg#no"></use>
                   </svg>
                 </td>
 
                 <td class="prices-table__cell" data-option="Комментарии">
                   <span class="visually-hidden">Нет</span>
                   <svg width="27" height="26">
-                    <use xlink:href="img/sprite.svg#icon-no"></use>
+                    <use xlink:href="img/sprites/sprite.svg#no"></use>
                   </svg>
                 </td>
 
                 <td class="prices-table__cell" data-option="Комментарии">
                   <span class="visually-hidden">Есть</span>
                   <svg width="31" height="21">
-                    <use xlink:href="img/sprite.svg#icon-yes"></use>
+                    <use xlink:href="img/sprites/sprite.svg#yes"></use>
                   </svg>
                 </td>
               </tr>
@@ -462,7 +454,7 @@
             <a class="social-links__link  social-links__link--twitter" href="#">
               <span class="visually-hidden">Наша страница в Twitter</span>
               <svg width="18" height="14">
-                <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                <use xlink:href="img/sprites/sprite.svg#twitter"></use>
               </svg>
             </a>
           </li>
@@ -471,7 +463,7 @@
             <a class="social-links__link  social-links__link--facebook" href="#">
               <span class="visually-hidden">Наша группа в Facebook</span>
               <svg width="9" height="18">
-                <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                <use xlink:href="img/sprites/sprite.svg#facebook"></use>
               </svg>
             </a>
           </li>
@@ -480,7 +472,7 @@
             <a class="social-links__link  social-links__link--youtube" href="#">
               <span class="visually-hidden">Наш канал на YouTube</span>
               <svg width="15" height="13">
-                <use xlink:href="img/sprite.svg#icon-youtube"></use>
+                <use xlink:href="img/sprites/sprite.svg#youtube"></use>
               </svg>
             </a>
           </li>
@@ -492,9 +484,8 @@
           Разработано
           <a class="copyright__link" target="_blank" href="https://htmlacademy.ru/">
             <span class="visually-hidden">в HTML Academy</span>
-            <!--TODO: добавить префикс icon--->
             <svg width="27" height="34">
-              <use xlink:href="#logo-htmlacademy"></use>
+              <use xlink:href="img/sprites/sprite.svg#htmlacademy"></use>
             </svg>
           </a>
         </p>
