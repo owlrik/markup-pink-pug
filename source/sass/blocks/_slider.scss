@@ -101,6 +101,10 @@
   margin-top: 25px;
   text-align: center;
 
+  @media (min-width: $screen-medium) {
+    margin-top: 0;
+  }
+
   @media (min-width: $screen-large) {
     display: none;
   }
