@@ -183,15 +183,19 @@
     }
   }
 }
-//
-//TODO: либо повесить sr-only и убрать на других вьюпортах JS-ом, либо переопределить стили sr-only
+
 .form__group--contacts .form__group-title {
-  display: none;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
 
   @media (min-width: $screen-medium) {
+    position: static;
     display: block;
     padding-right: 32px;
     padding-left: 32px;
+    clip: auto;
+    clip-path: none;
   }
 }
 
