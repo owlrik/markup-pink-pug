@@ -13,6 +13,7 @@ const htmlmin = require('gulp-htmlmin');
 
 const terser = require('gulp-terser');
 const concat = require('gulp-concat');
+const babel = require('gulp-babel');
 
 const imagemin = require('gulp-imagemin');
 const svgstore = require('gulp-svgstore');
@@ -51,8 +52,20 @@ function processHtml() {
 exports.processHtml = processHtml;
 
 function buildJs() {
-  return src(['source/js/lib/**/*.js', 'source/js/utils/**/*.js', 'source/js/script.js'], { sourcemaps: true })
+  return src([
+    'node_modules/picturefill/dist/picturefill.min.js',
+    'node_modules/object-fit-images/dist/ofi.min.js',
+    'node_modules/svg4everybody/dist/svg4everybody.min.js'
+  ])
+    .pipe(src([
+      'source/js/lib/**/*.js',
+      'source/js/utils/**/*.js',
+      'source/js/script.js'], { sourcemaps: true }))
     .pipe(plumber())
+    .pipe(babel({
+      presets: ['@babel/env'],
+      ignore: ['node_modules']
+    }))
     .pipe(concat('script.js'))
     .pipe(dest('build/js'))
     .pipe(terser())
