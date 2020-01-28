@@ -17,7 +17,7 @@ function mapHandler() {
 
     let map = new google.maps.Map(mapElement, mapOptions);
 
-    let markerImage = '../img/icon-map-marker.svg';
+    let markerImage = 'img/icon-map-marker.svg';
     let marker = new google.maps.Marker({
       position: pinkOfficeLatlng,
       map: map,
