@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Проект на интенсиве HTML Academy «Профессиональный HTML и CSS, уровень 2»",
   "author": "Vadim Tiuriumin",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:owlrik/edu--pink.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
@@ -11,6 +15,7 @@
     "browser-sync": "^2.26.7",
     "cross-env": "^6.0.3",
     "del": "^4.1.1",
+    "gh-pages": "^2.2.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
@@ -33,6 +38,7 @@
   "scripts": {
     "start": "gulp",
     "build": "cross-env NODE_ENV=production gulp build",
+    "deploy": "cross-env NODE_ENV=production gulp build && cross-env gulp deploy",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "editorconfig": "editorconfig-cli",
     "test": "npm run editorconfig && npm run stylelint"

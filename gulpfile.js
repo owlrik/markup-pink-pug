@@ -23,6 +23,8 @@ const rename = require('gulp-rename');
 const gulpIf = require('gulp-if');
 const del = require('del');
 
+const ghpages = require('gh-pages');
+
 const server = require('browser-sync').create();
 
 let isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'dev';
@@ -110,6 +112,11 @@ function reload(done) {
   server.reload();
   done();
 }
+
+function deploy(cb) {
+  ghpages.publish('build/', cb);
+}
+exports.deploy = deploy;
 
 function serve() {
   server.init({
