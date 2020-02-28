@@ -110,11 +110,18 @@
   }
 
   &--yes {
-    background: url("../img/icon-yes.svg") no-repeat center / 31px 21px;
+    background: url("../img/icon-yes.svg") no-repeat right 20px center / 31px 21px;
   }
 
   &--no {
-    background: url("../img/icon-no.svg") no-repeat center / 27px 26px;
+    background: url("../img/icon-no.svg") no-repeat right 20px center / 27px 26px;
+  }
+
+  &--yes,
+  &--no {
+    @media (min-width: $screen-medium) {
+      background-position: center;
+    }
   }
 }
 
