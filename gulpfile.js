@@ -143,10 +143,10 @@ const copyFonts = () => {
 
 const copyMisc = () => {
   return src([
-    'src/*',
-    'src/data/**',
-    'src/file/**',
-    'src/video/**',
+    'source/*',
+    'source/data/**',
+    'source/file/**',
+    'source/video/**',
   ], {
     base: 'source',
   })
