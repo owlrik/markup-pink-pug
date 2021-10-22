@@ -140,7 +140,6 @@
 }
 
 .photo-upload__toggle {
-
   &[id="toggle-crop"]:checked ~ .range .range__icon--crop svg,
   &[id="toggle-fill"]:checked ~ .range .range__icon--fill svg,
   &[id="toggle-contrast"]:checked ~ .range .range__icon--contrast svg {

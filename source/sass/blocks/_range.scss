@@ -82,7 +82,7 @@
 
 .range__input,
 .range__input::-webkit-slider-thumb {
-  -webkit-appearance: none;
+  -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
 }
 
 .range__input::-webkit-slider-runnable-track {

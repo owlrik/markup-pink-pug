@@ -72,5 +72,5 @@ input[type="radio"].visually-hidden {
 }
 
 .hidden {
-  display: none; //Must be !important but stylelint@htmlacademy
+  display: none !important; /* stylelint-disable-line declaration-no-important */
 }

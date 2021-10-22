@@ -15,7 +15,6 @@
 }
 
 .radio-field__input:checked + .radio-field__label {
-
   &:active::before {
     background-color: #ffffff;
   }
