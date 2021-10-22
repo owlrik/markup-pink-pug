@@ -16,9 +16,11 @@ const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 
 const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
 const svgstore = require('gulp-svgstore');
 
 const plumber = require('gulp-plumber');
+const changed = require('gulp-changed');
 const rename = require('gulp-rename');
 const gulpIf = require('gulp-if');
 const del = require('del');
@@ -27,33 +29,45 @@ const ghpages = require('gh-pages');
 
 const server = require('browser-sync').create();
 
-let isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'dev';
+let isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
-function processSass() {
-  return src('source/sass/style.scss', { sourcemaps: true })
+const cleanBuildDir = () => {
+  return del('build');
+};
+
+const reload = (done) => {
+  server.reload();
+  done();
+};
+
+const buildPages = () => {
+  return src('source/*.html')
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      removeComments: true
+    }))
+    .pipe(dest('build'));
+};
+
+const buildStyles = () => {
+  return src('source/sass/style.scss', {sourcemaps: true})
     .pipe(plumber())
-    .pipe(sass())
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }))
     .pipe(postcss([
-      autoprefixer()
+      autoprefixer({
+        grid: 'no-autoplace'
+      })
     ]))
     .pipe(dest('build/css'))
     .pipe(csso())
     .pipe(rename('style.min.css'))
-    .pipe(gulpIf(isDev, dest('build/css', { sourcemaps: '.' }), dest('build/css')))
+    .pipe(gulpIf(isDev, dest('build/css', {sourcemaps: '.'}), dest('build/css')))
     .pipe(gulpIf(isDev, server.stream()));
-}
-exports.processSass = processSass;
+};
 
-function processHtml() {
-  return src('source/*.html')
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
-    .pipe(dest('build'));
-}
-exports.processHtml = processHtml;
-
-function buildJs() {
+const buildScripts = () => {
   return src([
     'node_modules/picturefill/dist/picturefill.min.js',
     'node_modules/object-fit-images/dist/ofi.min.js',
@@ -62,7 +76,7 @@ function buildJs() {
     .pipe(src([
       'source/js/lib/**/*.js',
       'source/js/utils/**/*.js',
-      'source/js/script.js'], { sourcemaps: true }))
+      'source/js/script.js'], {sourcemaps: true}))
     .pipe(plumber())
     .pipe(babel({
       presets: ['@babel/env'],
@@ -72,53 +86,74 @@ function buildJs() {
     .pipe(dest('build/js'))
     .pipe(terser())
     .pipe(rename('script.min.js'))
-    .pipe(gulpIf(isDev, dest('build/js', { sourcemaps: '.' }), dest('build/js')));
-}
-exports.buildJs = buildJs;
+    .pipe(gulpIf(isDev, dest('build/js', {sourcemaps: '.'}), dest('build/js')));
+};
 
-function copyFonts() {
-  return src('source/fonts/**/*.{woff,woff2}')
-    .pipe(dest('build/fonts'));
-}
-exports.copyFonts = copyFonts;
-
-function copyImg() {
-  return src(['source/img/**/*.{jpg,jpeg,png,svg,webp}', '!source/img/sprites/**/*.{jpg,jpeg,png,svg,webp}'])
+const optimizeSvg = () => {
+  return src('source/img/**/*.{svg}')
+    .pipe(changed('source/img'))
     .pipe(imagemin([
-      imagemin.jpegtran({progressive: true}),
-      imagemin.optipng({optimizationLevel: 3}),
       imagemin.svgo()
     ]))
-    .pipe(dest('build/img'));
-}
-exports.copyImg = copyImg;
+    .pipe(dest('source/img'));
+};
 
-function generateSvgSprite() {
+const buildSvgSprite = () => {
   return src('source/img/sprites/svg/*.svg')
     .pipe(svgstore({
       inlineSvg: true
     }))
     .pipe(rename('sprite.svg'))
     .pipe(dest('build/img/sprites'));
-}
-exports.generateSvgSprite = generateSvgSprite;
+};
 
-function cleanBuildDir() {
-  return del('build');
-}
-exports.cleanBuildDir = cleanBuildDir;
+const optimizeImages = () => {
+  return src('build/img/**/*.{jpg,png}')
+    .pipe(imagemin([
+      imagemin.optipng({
+        optimizationLevel: 3
+      }),
+      imagemin.mozjpeg({
+        quality: 75,
+        progressive: true
+      }),
+    ]))
+    .pipe(dest('build/img'));
+};
 
-function reload(done) {
-  server.reload();
-  done();
-}
+const createWebp = () => {
+  return src('source/img/**/*.{jpg,png}')
+    .pipe(webp({
+      quality: 90
+    }))
+    .pipe(dest('source/img'));
+};
 
-function deploy(cb) {
-  ghpages.publish('build/', cb);
-}
-exports.deploy = deploy;
+const copyImages = () => {
+  return src(['source/img/**/*.{jpg,jpeg,png,svg,webp}', '!source/img/sprites/**/*.{jpg,jpeg,png,svg,webp}'], {base: 'source'})
+    .pipe(changed('build/img'))
+    .pipe(dest('build'));
+};
 
-function serve() {
+const copyFonts = () => {
+  return src('source/fonts/**/*.{woff,woff2}')
+    .pipe(changed('build/fonts'))
+    .pipe(dest('build/fonts'));
+};
+
+const copyMisc = () => {
+  return src([
+    'src/*',
+    'src/data/**',
+    'src/file/**',
+    'src/video/**',
+  ], {
+    base: 'source',
+  })
+    .pipe(dest('build'));
+};
+
+const syncServer = () => {
   server.init({
     server: 'build/',
     notify: false,
@@ -127,26 +162,37 @@ function serve() {
     ui: false
   });
 
-  watch('source/sass/**/*.{scss,sass}', series(processSass));
-  watch('source/*.html', series(processHtml, reload));
-  watch('source/js/**/*.js', series(buildJs, reload));
-  watch(['source/img/**/*.{jpg,jpeg,png,svg,webp}', '!source/img/sprites/**/*.svg'], series(copyImg, reload));
-  watch('source/img/sprites/svg/*.svg', series(generateSvgSprite, reload));
+  watch('source/*.html', series(buildPages, reload));
+  watch('source/sass/**/*.{scss,sass}', series(buildStyles));
+  watch('source/js/**/*.js', series(buildScripts, reload));
+  watch(['source/img/**/*.{jpg,jpeg,png,svg,webp}', '!source/img/sprites/**/*.svg'], series(optimizeSvg, copyImages, reload));
+  watch('source/img/sprites/svg/*.svg', series(optimizeSvg, buildSvgSprite, reload));
   watch('source/fonts/**/*.{woff,woff2}', series(copyFonts, reload));
+  watch('source/*.*', series(copyMisc, reload));
+};
+
+const deploy = (cb) => {
+  ghpages.publish('build/', cb);
 }
-exports.serve = serve;
 
-exports.build = series(
+const build = series(
   cleanBuildDir,
-  parallel(copyFonts, copyImg),
-  generateSvgSprite,
-  parallel(processHtml, processSass, buildJs)
+  optimizeSvg,
+  parallel(
+    copyMisc,
+    copyFonts,
+    copyImages,
+    buildSvgSprite,
+    buildStyles,
+    buildScripts,
+    buildPages
+  )
 );
 
-exports.default = series(
-  cleanBuildDir,
-  parallel(copyFonts, copyImg),
-  generateSvgSprite,
-  parallel(processHtml, processSass, buildJs),
-  serve
-);
+const start = series(build, syncServer);
+
+exports.build = build;
+exports.start = start;
+exports.webp = createWebp;
+exports.imagemin = optimizeImages;
+exports.deploy = deploy;
