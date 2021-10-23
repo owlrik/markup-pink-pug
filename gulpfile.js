@@ -168,7 +168,7 @@ const syncServer = () => {
   watch(['source/img/**/*.{jpg,jpeg,png,svg,webp}', '!source/img/sprites/**/*.svg'], series(optimizeSvg, copyImages, reload));
   watch('source/img/sprites/svg/*.svg', series(optimizeSvg, buildSvgSprite, reload));
   watch('source/fonts/**/*.{woff,woff2}', series(copyFonts, reload));
-  watch('source/*.*', series(copyMisc, reload));
+  watch(['source/*.*', '!source/*.html'], series(copyMisc, reload));
 };
 
 const deploy = (cb) => {
