@@ -30,15 +30,6 @@
     }
   }
 
-  &--no-js .main-nav__list {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    z-index: 10;
-    display: block;
-  }
-
   &--opened .trigger {
     width: 65px;
   }

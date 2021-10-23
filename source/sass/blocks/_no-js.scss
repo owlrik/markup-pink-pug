@@ -1,0 +1,22 @@
+.no-js .page-header {
+  @media (max-width: $screen-large - 1) {
+    min-height: 450px;
+  }
+}
+
+.no-js .main-nav--closed .main-nav__list {
+  @media (max-width: $screen-large - 1) {
+    display: block;
+  }
+}
+
+.no-js .main-nav__list {
+  @media (max-width: $screen-large - 1) {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+  }
+}
