@@ -1,0 +1,81 @@
+extends base/layout
+
+append vars
+  -
+   var currentPage = "index"
+   var title = "Pink – приложение для раскраски серых будней"
+   var hasHeader = true
+   var headerMods = "page-header--home"
+   var hasFooter = true
+   var footerMods = "page-footer--home"
+
+block main
+  main.page-main
+    h1.visually-hidden= title
+
+    section.features
+      header.features__header
+        .features__top
+          h2.visually-hidden= features.title
+          p.call-to-action.call-to-action--home.features__call-to-action!= features.callToAction
+
+      .features__wrap
+        .features__inner
+          ul.features__list
+            each feature in features.items
+              li.features__item(class="features__item--" + feature.name)
+                .features__text
+                  h3.features__title!= feature.title
+                  p.features__description!= feature.descr
+
+                picture
+                  each item, index in feature.pictureData
+                    if (index < feature.pictureData.length - 1)
+                      +picture(item.media, item.format, item.path, item.name, item.density)
+                    else
+                      +img(item.format, item.path, item.name, item.density, feature.imageWidth, feature.imageHeight, feature.imageAlt)(class="features__img")
+
+    .research
+      h2.visually-hidden= research.sectionTitle
+      .research__inner
+        .research__text
+          h3.research__title!= research.title
+          p.research__description!= research.descr
+          a.research__link(href=research.link.href)!= research.link.text
+
+    section.reviews
+      h2.visually-hidden= reviews.title
+      - var slideCount = reviews.items.length;
+      +slider(slideCount, true, true)(class="reviews__slider")
+        .reviews__list.slider__inner
+          each item in reviews.items
+            blockquote.reviews__item.slider__item
+              cite.reviews__author-name!= item.name
+              p.reviews__author-info!= item.info
+              p.reviews__text!= item.text
+
+    section.prices
+      h2.visually-hidden= prices.title
+      - var slideCount = prices.table.headerCells.length - 1;
+      +slider(slideCount, false, true)(class="slider--wide prices__slider")
+        +prices-table
+
+    section.contacts
+      h2.visually-hidden= contacts.title
+
+      .contacts__inner
+        p.call-to-action.call-to-action--home.contacts__call-to-action
+        ul.contacts__list
+          each item in contacts.items
+            li.contacts__item(class="contacts__item--" + item.name)
+              b.contacts__action!= item.actionName
+              if (item.link)
+                a.contacts__link(href=item.link)!= item.text
+              else
+                p.contacts__text!= item.text
+
+      .contacts__map#map
+        | <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6180383255676!2d30.321352243576793!3d59.93848002308582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1555912509511!5m2!1sru!2sru" style="border: 0;" allowfullscreen loading="lazy"></iframe>
+
+append scripts
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhsRLf1JnVfLLoDBnj3jF-U7iBxu3oDWU&callback=mapHandler", async, defer)

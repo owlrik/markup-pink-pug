@@ -7,6 +7,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const csso = require('gulp-csso');
 
+const pug = require('gulp-pug');
 const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
 const htmlmin = require('gulp-htmlmin');
@@ -41,7 +42,9 @@ const reload = (done) => {
 };
 
 const buildPages = () => {
-  return src('source/*.html')
+  return src('source/pug/*.pug')
+    .pipe(plumber())
+    .pipe(pug())
     .pipe(htmlmin({
       collapseWhitespace: true,
       removeComments: true
@@ -143,7 +146,7 @@ const copyFonts = () => {
 
 const copyMisc = () => {
   return src([
-    'source/*',
+    // 'source/*',
     'source/data/**',
     'source/file/**',
     'source/video/**',
@@ -162,7 +165,8 @@ const syncServer = () => {
     ui: false
   });
 
-  watch('source/*.html', series(buildPages, reload));
+  // watch('source/*.html', series(buildPages, reload));
+  watch('source/pug/**/*.pug', series(buildPages, reload));
   watch('source/sass/**/*.{scss,sass}', series(buildStyles));
   watch('source/js/**/*.js', series(buildScripts, reload));
   watch(['source/img/**/*.{jpg,jpeg,png,svg,webp}', '!source/img/sprites/**/*.svg'], series(optimizeSvg, copyImages, reload));

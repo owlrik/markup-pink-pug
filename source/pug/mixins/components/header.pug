@@ -1,0 +1,54 @@
+mixin header(headerMods, currentPage)
+  -
+    var headerLinks = [
+      {
+        id: "index",
+        href: "index.html",
+        text: "Главная"
+      },
+      {
+        id: "photo",
+        href: "photo.html",
+        text: "Фотографии"
+      },
+      {
+        id: "form",
+        href: "form.html",
+        text: "Конкурс"
+      },
+      {
+        id: "academy",
+        href: "https://htmlacademy.ru/intensive/adaptive",
+        text: "HTML Academy"
+      }
+    ]
+
+    var logoClasses = [
+      "logo-pink--light",
+      "logo-pink--word-only",
+      "main-nav__logo-pink"
+    ]
+
+  header.page-header(class=headerMods)
+    nav.main-nav.main-nav--closed
+      .main-nav__top
+        if (currentPage === "index")
+          a.main-nav__logo
+            +logo-svg(logoClasses)
+        else
+          a.main-nav__logo(href="index.html")
+            +logo-svg(logoClasses)
+
+        button.trigger.main-nav__trigger(type="button")
+          span
+
+        ul.main-nav__list
+          each link, index in headerLinks
+            li.main-nav__item
+              if (link.id === currentPage)
+                a.main-nav__link.main-nav__link--active!= link.text
+              else
+                a.main-nav__link(href=link.href)!= link.text
+
+    if (currentPage === "index")
+      +intro(["intro--home", "page-header__intro--home"])

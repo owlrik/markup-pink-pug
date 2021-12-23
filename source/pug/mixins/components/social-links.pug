@@ -1,0 +1,27 @@
+mixin social-links()
+  -
+    var links = [
+      {
+        name: "twitter",
+        text: "Наша страница в Twitter",
+        iconSize: [18, 14]
+      },
+      {
+        name: "facebook",
+        text: "Наша группа в Facebook",
+        iconSize: [9, 18]
+      },
+      {
+        name: "youtube",
+        text: "Наш канал на YouTube",
+        iconSize: [15, 13]
+      }
+    ]
+
+  ul.social-links
+    each link in links
+      li.social-links__item
+        a.social-links__link(class="social-links__link--" + link.name)
+          span.visually-hidden= link.text
+          svg(width=link.iconSize[0], height=link.iconSize[1])
+            use(xlink:href="img/sprites/sprite.svg#" + link.name)

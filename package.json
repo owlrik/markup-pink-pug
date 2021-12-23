@@ -1,12 +1,12 @@
 {
-  "name": "pink",
+  "name": "pink-pug",
   "version": "1.0.0",
-  "description": "Проект на интенсиве HTML Academy «Профессиональный HTML и CSS, уровень 2»",
+  "description": "Проект на интенсиве HTML Academy «HTML и CSS. Адаптивная вёрстка и автоматизация»",
   "author": "Vadim Tiuriumin",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:owlrik/markup-pink.git"
+    "url": "git@github.com:owlrik/markup-pink-pug.git"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development gulp start",
@@ -29,7 +29,7 @@
     "gh-pages": "^2.2.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
-    "gulp-changed": "^4.0.2",
+    "gulp-changed": "^4.0.3",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.1",
     "gulp-htmlmin": "^5.0.1",
@@ -38,6 +38,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-posthtml": "^3.0.5",
+    "gulp-pug": "^5.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.1.1",
     "gulp-svgstore": "^7.0.1",

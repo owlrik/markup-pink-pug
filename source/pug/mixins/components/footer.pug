@@ -1,0 +1,29 @@
+mixin footer(footerMods)
+  -
+    var logoClasses = [
+      "logo-pink--dark",
+      "logo-pink--show-glasses",
+      "page-footer__logo-pink"
+    ]
+
+  footer.page-footer(class=footerMods)
+    .page-footer__inner
+      if (currentPage === "index")
+        a.page-footer__logo
+          +logo-svg(logoClasses)
+      else
+        a.page-footer__logo(href="index.html")
+          +logo-svg(logoClasses)
+
+      section.page-footer__social
+        h2.visually-hidden Ищите нас в соцсетях!
+
+        +social-links()
+
+      section.copyright.page-footer__copyright
+        p.copyright__text Разработано
+
+          a.copyright__link(target="_blank", href="https://htmlacademy.ru/")
+            span.visually-hidden в HTML Academy
+            svg(width="27", height="34")
+              use(xlink:href="img/sprites/sprite.svg#htmlacademy")

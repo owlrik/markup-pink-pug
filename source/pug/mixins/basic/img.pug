@@ -1,0 +1,9 @@
+mixin img(format, path, name, density, width, height, alt)
+  img(
+    class!=attributes.class,
+    src=`${path}${name}@${density[0]}.${format}`,
+    srcset=`${path}${name}@${density[1]}.${format} ${density[1]}`,
+    width=width,
+    height=height,
+    alt=alt
+  )

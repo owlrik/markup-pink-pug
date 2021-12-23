@@ -1,0 +1,6 @@
+mixin picture(media, format, path, name, density)
+  source(
+    media=media,
+    type="image/" + format,
+    srcset=`${path}${name}@${density[0]}.${format} ${density[0]}, ${path}${name}@${density[1]}.${format} ${density[1]}`
+  )

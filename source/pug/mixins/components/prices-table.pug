@@ -1,0 +1,27 @@
+mixin prices-table()
+  table.prices-table
+    thead.prices-table__header
+      tr
+        each cell in prices.table.headerCells
+          if (!(cell.title && cell.price))
+            th.prices-table__cell.prices-table__cell--empty
+          else
+            th.prices-table__cell.prices-table__cell--header
+              if (cell.isHit)
+                .prices-table__marker.prices-table__marker--hit
+              p.prices-table__title!= cell.title
+              p.prices-table__price!= cell.price
+
+    tbody.prices-table__body
+      each row in prices.table.rows
+        tr
+          each cell in row.cells
+            if (cell.isOptionName)
+              td.prices-table__cell.prices-table__cell--option!= cell.name
+            else
+              if (cell.isAvailable)
+                td.prices-table__cell.prices-table__cell--yes(data-option=cell.name)
+                  span.visually-hidden Есть
+              else
+                td.prices-table__cell.prices-table__cell--no(data-option=cell.name)
+                  span.visually-hidden Нет

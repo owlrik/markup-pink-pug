@@ -1,0 +1,22 @@
+mixin slider(slideCount, hasTogglers, hasControls)
+  .slider(class!=attributes.class)
+    if (hasTogglers)
+      .slider__togglers
+        button.slider__toggler.slider__toggler--prev.button-image(type="button", disabled)
+          +icon("review-arrow-left", 22, 41)
+          span.visually-hidden Предыдущий отзыв
+
+        button.slider__toggler.slider__toggler--next.button-image(type="button")
+          +icon("review-arrow-right", 22, 41)
+          span.visually-hidden Следующий отзыв
+
+    .slider__overflow-wrap
+      block
+
+    if (hasControls)
+      .slider__controls
+        - var index = 0
+        while index < slideCount
+          button.slider__control(class=(index === 0 ? "slider__control--active" : null), type="button")
+            span= index
+          - index++

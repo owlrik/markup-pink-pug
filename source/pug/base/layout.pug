@@ -1,0 +1,36 @@
+doctype html
+
+include content
+include mixins
+
+block vars
+  - var title = "Pink – приложение для раскраски серых будней";
+
+html.no-js(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    script document.documentElement.classList.remove('no-js');
+    title= title
+    link(rel="preload", href="fonts/opensans.woff2", as="font", type="font/woff2", crossorigin="anonymous")
+    link(rel="preload", href="fonts/opensansbold.woff2", as="font", type="font/woff2", crossorigin="anonymous")
+    link(rel="preload", href="fonts/opensanslight.woff2", as="font", type="font/woff2", crossorigin="anonymous")
+    link(rel="stylesheet", href="css/style.min.css")
+    link(rel="icon", href="favicon.ico")
+    link(rel="icon", href="img/favicon/icon.svg", type="image/svg+xml")
+    link(rel="apple-touch-icon", href="img/favicon/180.png")
+    link(rel="manifest", href="site.webmanifest")
+
+  body
+    if (hasHeader)
+      +header(headerMods, currentPage)
+
+    block main
+
+    if (hasFooter)
+      +footer()
+
+    block modals
+
+    block scripts
+      script(src="js/script.min.js")

@@ -1,0 +1,9 @@
+mixin button(classes, text, isInput)
+  if (attributes.href)
+    a.button(class=classes)&attributes(attributes)!= text
+      block
+  else if (typeof isInput !== "undefined" && isInput)
+    input.button(class=classes, value=text, type="button")&attributes(attributes)
+  else
+    button.button(class=classes)&attributes(attributes)!= text
+      block
