@@ -1,0 +1,61 @@
+-
+  var photoUpload = {
+    title: "Форма для редактирования и загрузки фото",
+    callToAction: "Затмите их всех!<br> Выкладывайте все, что накопилось в телефоне!",
+    imageAlt: "Зимняя дорога",
+    pictureData: [
+      {
+        media: "(min-width: 960px)",
+        format: "jpg",
+        path: "img/",
+        name: "photo-winter-desktop",
+        density: ["1x", "2x"]
+      },
+      {
+        media: "(min-width: 660px)",
+        format: "jpg",
+        path: "img/",
+        name: "photo-winter-tablet",
+        density: ["1x", "2x"]
+      },
+      {
+        media: null,
+        format: "jpg",
+        path: "img/",
+        name: "photo-winter-mobile",
+        density: ["1x", "2x"]
+      }
+    ],
+    tools: [
+      {
+        id: "toggle-crop",
+        name: "Обрезка",
+        mod: "crop",
+        icon: {
+          name: "editor-crop",
+          width: 48,
+          height: 48
+        }
+      },
+      {
+        id: "toggle-fill",
+        name: "Заливка",
+        mod: "fill",
+        icon: {
+          name: "editor-fill",
+          width: 53,
+          height: 48
+        }
+      },
+      {
+        id: "toggle-contrast",
+        name: "Контраст",
+        mod: "contrast",
+        icon: {
+          name: "editor-contrast",
+          width: 32,
+          height: 32
+        }
+      }
+    ]
+  }

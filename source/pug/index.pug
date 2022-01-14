@@ -16,7 +16,7 @@ block main
     section.features
       header.features__header
         .features__top
-          h2.visually-hidden= features.title
+          h2.visually-hidden!= features.title
           p.call-to-action.call-to-action--home.features__call-to-action!= features.callToAction
 
       .features__wrap
@@ -36,7 +36,7 @@ block main
                       +img(item.format, item.path, item.name, item.density, feature.imageWidth, feature.imageHeight, feature.imageAlt)(class="features__img")
 
     .research
-      h2.visually-hidden= research.sectionTitle
+      h2.visually-hidden!= research.sectionTitle
       .research__inner
         .research__text
           h3.research__title!= research.title
@@ -44,7 +44,7 @@ block main
           a.research__link(href=research.link.href)!= research.link.text
 
     section.reviews
-      h2.visually-hidden= reviews.title
+      h2.visually-hidden!= reviews.title
       - var slideCount = reviews.items.length;
       +slider(slideCount, true, true)(class="reviews__slider")
         .reviews__list.slider__inner
@@ -55,13 +55,13 @@ block main
               p.reviews__text!= item.text
 
     section.prices
-      h2.visually-hidden= prices.title
+      h2.visually-hidden!= prices.title
       - var slideCount = prices.table.headerCells.length - 1;
       +slider(slideCount, false, true)(class="slider--wide prices__slider")
         +prices-table
 
     section.contacts
-      h2.visually-hidden= contacts.title
+      h2.visually-hidden!= contacts.title
 
       .contacts__inner
         p.call-to-action.call-to-action--home.contacts__call-to-action

@@ -1,0 +1,8 @@
+mixin photoUploadRange(id, name, mod, icon, isChecked)
+  input.photo-upload__toggle.visually-hidden(type="radio", name="toggle", id=id, checked=(isChecked) ? true : null)
+  label.range.photo-upload__range(for=id)
+    span.visually-hidden!= name
+    span.range__icon(class="range__icon--" + mod)
+      +icon(icon.name, icon.width, icon.height)
+
+    input.range__input(class="range__input--" + mod, type="range", name="range-" + mod, min=0, max=100, value=0, id="range-" + mod)

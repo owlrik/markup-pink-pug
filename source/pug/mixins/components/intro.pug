@@ -1,17 +1,19 @@
-mixin intro(classes)
-  section.intro.page-header__intro(class=classes)
-    h2.visually-hidden!= intro.title
+mixin intro(currentPage)
+  section.intro.page-header__intro&attributes(attributes.class)
+    if (currentPage === "index")
+      h2.visually-hidden!= intro.index.title
 
-    .intro__inner
-      b.intro__slogan!= intro.slogan
+      .intro__inner
+        b.intro__slogan!= intro.index.slogan
+        +button("button--white intro__button", "Скачать приложение", false)(href="#")
 
-      +button(["button--white", "intro__button"], "Скачать приложение", false)(href="#")
-
-      ul.platforms.intro__platforms
-        each link in intro.platforms
-          li.platforms__item
-            a.platforms__link(class="platforms__link--" + link.name)
-              span.visually-hidden!= link.text
-              +icon(link.name, link.icon.width, link.icon.height)
-
-      p.intro__description!= intro.descr
+        ul.platforms.intro__platforms
+          each link in intro.index.platforms
+            li.platforms__item
+              a.platforms__link(class="platforms__link--" + link.name)
+                span.visually-hidden!= link.text
+                +icon(link.name, link.icon.width, link.icon.height)
+        p.intro__description!= intro.descr
+    else
+      .intro__inner
+        h1.intro__title!= intro[currentPage].title

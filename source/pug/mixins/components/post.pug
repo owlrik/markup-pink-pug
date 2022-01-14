@@ -1,0 +1,25 @@
+mixin post(postItem, isPanorama)
+  article.post(class=(isPanorama ? "post--panorama" : null))
+    h3.visually-hidden!= postItem.title
+    a.post__link(class=(isPanorama ? "post__link--panorama" : null), href=postItem.link)&attributes(attributes)
+      picture.post__image
+        each image, index in postItem.pictureData
+          if (index < postItem.pictureData.length - 1)
+            +picture(image.media, image.format, image.path, image.name, image.density)
+          else
+            +img(image.format, image.path, image.name, image.density, postItem.imageWidth, postItem.imageHeight, postItem.imageAlt)
+
+    .post__inner(class=(isPanorama ? "post__inner--panorama" : null))
+      .post__meta
+        cite.post__author-name!= postItem.author
+        |
+        |
+        time.post__time(datetime=postItem.timestamp)!= postItem.timeCaption
+      .post__comment!= postItem.comment
+      .post__likes
+        button.post__like.button-image Нравится!
+          +icon("heart", 13, 12)
+        p.post__likes-count
+          | Нравится:
+          |
+          span!= postItem.likesCount

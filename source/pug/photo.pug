@@ -7,3 +7,48 @@ append vars
    var hasHeader = true
    var headerMods = ""
    var hasFooter = true
+   var footerMods = ""
+
+block main
+  main.page-main
+    section.gallery
+      header.gallery__header
+        .gallery__top
+          h2.visually-hidden!= gallery.title
+          p.call-to-action.gallery__call-to-action!= gallery.callToAction
+
+      .gallery__item.gallery__item--panorama
+        +post(gallery.mainItem, true)
+
+      .gallery__inner
+        .gallery__layout
+          each item in gallery.items
+            .gallery__item
+              +post(item, false)
+
+    section.photo-upload
+      header.photo-upload__header
+        .photo-upload__top
+          h2.visually-hidden!= photoUpload.title
+          p.call-to-action.photo-upload__call-to-action!= photoUpload.callToAction
+
+      .photo-upload__wrap
+        .photo-upload__inner
+          form(action="https://echo.htmlacademy.ru", method="post")
+            .photo-upload__content
+              .photo-upload__wrap-img
+                picture
+                  each image, index in photoUpload.pictureData
+                    if (index < photoUpload.pictureData.length - 1)
+                      +picture(image.media, image.format, image.path, image.name, image.density)
+                    else
+                      +img(image.format, image.path, image.name, image.density, photoUpload.imageAlt)(class="photo-upload__image")
+
+              .photo-upload__wrap-tools
+                .photo-upload__tools
+                  each tool, index in photoUpload.tools
+                    +photoUploadRange(tool.id, tool.name, tool.mod, tool.icon, (index === 0))
+
+                .photo-upload__buttons
+                  +button("photo-upload__button", "Запостить", false)(type="submit")
+                  +button("button--grey photo-upload__button", "Отмена", false)(type="reset")

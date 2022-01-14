@@ -51,4 +51,6 @@ mixin header(headerMods, currentPage)
                 a.main-nav__link(href=link.href)!= link.text
 
     if (currentPage === "index")
-      +intro(["intro--home", "page-header__intro--home"])
+      +intro(currentPage)(class="intro--home page-header__intro--home")
+    else
+      +intro(currentPage)
