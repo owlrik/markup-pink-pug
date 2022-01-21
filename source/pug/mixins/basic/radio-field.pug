@@ -1,0 +1,6 @@
+mixin radioField(radios)
+  each radio in radios
+    .radio-field.form__radio-field
+      .radio-field__wrap
+        input.radio-field__input.visually-hidden(type="radio")&attributes(radio.attrs)
+        label.radio-field__label(for=radio.attrs.id)!= radio.labelText

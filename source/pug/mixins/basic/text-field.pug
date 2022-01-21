@@ -1,0 +1,12 @@
+mixin textField(props)
+  //- props {
+  //- id: surname
+  //- labelText: Фамилия
+  //- type: text/email/tel
+  //- name: surname
+  //- placeholder: Ваше имя
+  //- required: true/false
+  //- }
+  .text-field.form__text-field
+    label.text-field__label(for=props.id)!= props.labelText
+    input.text-field__input(type=props.type, name=props.name, id=props.id, placeholder=props.placeholder, required=props.isRequired)

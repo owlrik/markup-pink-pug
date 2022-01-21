@@ -1,0 +1,6 @@
+mixin checkboxField(checkboxes)
+  each checkbox in checkboxes
+    .checkbox-field.form__checkbox-field
+      .checkbox-field__wrap
+        input.checkbox-field__input.visually-hidden(type="checkbox")&attributes(checkbox.attrs)
+        label.checkbox-field__label(for=checkbox.attrs.id)!= checkbox.labelText

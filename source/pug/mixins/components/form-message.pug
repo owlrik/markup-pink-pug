@@ -1,0 +1,6 @@
+mixin formMessage(data)
+  .form-message.modal__form-message.hidden&attributes(attributes)
+    strong.form-message__title!= data.title
+    p.form-message__descr!= data.descr
+    .form-message__button-wrapper
+      +button("button--green button--large form-message__button", data.buttonText, false)(type="button")

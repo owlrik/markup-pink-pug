@@ -7,3 +7,182 @@ append vars
    var hasHeader = true
    var headerMods = ""
    var hasFooter = true
+   var footerMods = ""
+
+block main
+  main.page-main
+    section.contest
+      header.contest__header
+        .contest__top
+          h2.visually-hidden!= contest.title
+          p.call-to-action.contest__call-to-action!= contest.callToAction
+
+      .contest__inner
+        form.form.contest__form(action="https://htmlacademy.ru/echo", method="post")
+          fieldset.form__group.form__group--username
+            legend.form__group-title.visually-hidden Напишите своё имя
+            .form__group-inner
+              +textField({
+                id: "surname",
+                labelText: "Фамилия:",
+                type: "text",
+                name: "surname",
+                placeholder: "Укажите фамилию *",
+                isRequired: true
+              })
+              +textField({
+                id: "name",
+                labelText: "Имя:",
+                type: "text",
+                name: "name",
+                placeholder: "Введите ваше имя *",
+                isRequired: true
+              })
+              +textField({
+                id: "patronymic",
+                labelText: "Отчество:",
+                type: "text",
+                name: "patronymic",
+                placeholder: "Ну и отчество тоже",
+                isRequired: false
+              })
+
+          fieldset.form__group.form__group--achievements
+            legend.form__group-title Ваши безбашенные достижения в путешествии
+            .form__group-inner
+              +checkboxField([
+                {
+                  labelText: "Сделал селфи с акулой",
+                  attrs: {
+                    id: "shark-selfie",
+                    name: "shark-selfie",
+                    checked: true
+                  }
+                },
+                {
+                  labelText: "Обгорел на пляже",
+                  attrs: {
+                    id: "sunburn",
+                    name: "sunburn",
+                    checked: true
+                  }
+                },
+                {
+                  labelText: "Видел Чака Норриса",
+                  attrs: {
+                    id: "saw-norris",
+                    name: "saw-norris",
+                  }
+                },
+                {
+                  labelText: "Накупил сувениров",
+                  attrs: {
+                    id: "souvenirs",
+                    name: "souvenirs",
+                  }
+                },
+                {
+                  labelText: "Удержал башню",
+                  attrs: {
+                    id: "hold-tower",
+                    name: "hold-tower",
+                    checked: true
+                  }
+                },
+                {
+                  labelText: "Разгромил отель",
+                  attrs: {
+                    id: "crash-hotel",
+                    name: "crash-hotel",
+                  }
+                }
+              ])
+
+          fieldset.form__group.form__group--contacts
+            legend.form__group-title Контактная информация
+            .form__group-inner
+              +textField({
+                id: "phone",
+                labelText: "Номер телефона",
+                type: "tel",
+                name: "phone",
+                placeholder: "Номер, пожалуйста",
+                isRequired: false
+              })
+              +textField({
+                id: "email",
+                labelText: "Адрес почты",
+                type: "email",
+                name: "email",
+                placeholder: "Введите почту *",
+                isRequired: true
+              })
+
+          fieldset.form__group.form__group--platform
+            legend.form__group-title С каким приложением путешествовали?
+            .form__group-inner
+              +radioField([
+                {
+                  labelText: "Pink для iOS",
+                  attrs: {
+                    id: "ios",
+                    name: "platform",
+                    value: "ios",
+                    checked: true
+                  }
+                },
+                {
+                  labelText: "Pink на Android",
+                  attrs: {
+                    id: "android",
+                    name: "platform",
+                    value: "android",
+                  }
+                },
+                {
+                  labelText: "Windows Phone",
+                  attrs: {
+                    id: "windows",
+                    name: "platform",
+                    value: "windows",
+                  }
+                }
+              ])
+
+          .form__group.form__group--experience
+            +textareaField({
+              labelText: "Опишите свои эмоции",
+              attrs: {
+                id: "experience",
+                name: "experience",
+                cols: "30",
+                rows: "10",
+                placeholder: "Можно прям в красках, не стесняясь в выражениях"
+              }
+            })
+
+          .form__submit
+            +button("button--large button--green form__button", "Отправить форму", false)(type="submit")
+            |
+            |
+            small.form__note
+              sup.
+                * &mdash; обязательные #[span для заполнения] поля
+
+block modals
+  -
+    var messageSuccess = {
+      title: "Ваша заявка отправлена",
+      descr: "Спасибо за&nbsp;ваше участие, ваша заявка уже поступила к&nbsp;нам. В ближайшее время мы&nbsp;рассмотрим ее&nbsp;и оповестим&nbsp;вас.",
+      buttonText: "Закрыть окно"
+    }
+    var messageError = {
+      title: "Что-то пошло не&nbsp;так!",
+      descr: "Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить.",
+      buttonText: "ОК"
+    }
+
+  .modal
+    +formMessage(messageSuccess)(class="form-message--success")
+    +formMessage(messageError)(class="form-message--error")
+

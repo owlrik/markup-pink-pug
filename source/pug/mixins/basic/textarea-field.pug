@@ -1,0 +1,3 @@
+mixin textareaField(props)
+  label.form__group-title(for=props.attrs.id)!= props.labelText
+  textarea.form__textarea-field&attributes(props.attrs)
