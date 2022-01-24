@@ -42,7 +42,7 @@ block main
                     if (index < photoUpload.pictureData.length - 1)
                       +picture(image.media, image.format, image.path, image.name, image.density)
                     else
-                      +img(image.format, image.path, image.name, image.density, photoUpload.imageAlt)(class="photo-upload__image")
+                      +img(image.format, image.path, image.name, image.density, null, null, photoUpload.imageAlt)(class="photo-upload__image")
 
               .photo-upload__wrap-tools
                 .photo-upload__tools

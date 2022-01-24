@@ -1,4 +1,4 @@
-mixin footer(footerMods)
+mixin footer(footerMods, currentPage)
   -
     var logoClasses = [
       "logo-pink--dark",
@@ -6,24 +6,27 @@ mixin footer(footerMods)
       "page-footer__logo-pink"
     ]
 
+    var logoWidth = 147
+    var logoHeight = 40
+
   footer.page-footer(class=footerMods)
     .page-footer__inner
       if (currentPage === "index")
         a.page-footer__logo
-          +logo-svg(logoClasses)
+          +logo-svg(logoClasses, logoWidth, logoHeight)
       else
         a.page-footer__logo(href="index.html")
-          +logo-svg(logoClasses)
+          +logo-svg(logoClasses, logoWidth, logoHeight)
 
       section.page-footer__social
         h2.visually-hidden Ищите нас в соцсетях!
-
         +social-links()
 
       section.copyright.page-footer__copyright
         p.copyright__text Разработано
-
           a.copyright__link(target="_blank", href="https://htmlacademy.ru/")
-            span.visually-hidden в HTML Academy
+            span.visually-hidden
+              |
+              | в HTML Academy
             svg(width="27", height="34")
               use(xlink:href="img/sprites/sprite.svg#htmlacademy")

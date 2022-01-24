@@ -8,8 +8,6 @@ const autoprefixer = require('autoprefixer');
 const csso = require('gulp-csso');
 
 const pug = require('gulp-pug');
-const posthtml = require('gulp-posthtml');
-const include = require('posthtml-include');
 const htmlmin = require('gulp-htmlmin');
 
 const terser = require('gulp-terser');
@@ -146,7 +144,7 @@ const copyFonts = () => {
 
 const copyMisc = () => {
   return src([
-    // 'source/*',
+    'source/*',
     'source/data/**',
     'source/file/**',
     'source/video/**',
@@ -165,7 +163,6 @@ const syncServer = () => {
     ui: false
   });
 
-  // watch('source/*.html', series(buildPages, reload));
   watch('source/pug/**/*.pug', series(buildPages, reload));
   watch('source/sass/**/*.{scss,sass}', series(buildStyles));
   watch('source/js/**/*.js', series(buildScripts, reload));

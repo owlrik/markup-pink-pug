@@ -1,5 +1,5 @@
 mixin intro(currentPage)
-  section.intro.page-header__intro&attributes(attributes.class)
+  section.intro.page-header__intro(class=attributes.class)
     if (currentPage === "index")
       h2.visually-hidden!= intro.index.title
 
@@ -13,7 +13,7 @@ mixin intro(currentPage)
               a.platforms__link(class="platforms__link--" + link.name)
                 span.visually-hidden!= link.text
                 +icon(link.name, link.icon.width, link.icon.height)
-        p.intro__description!= intro.descr
+        p.intro__description!= intro.index.descr
     else
       .intro__inner
         h1.intro__title!= intro[currentPage].title

@@ -29,15 +29,18 @@ mixin header(headerMods, currentPage)
       "main-nav__logo-pink"
     ]
 
+    var logoWidth = 75
+    var logoHeight = 22
+
   header.page-header(class=headerMods)
     nav.main-nav.main-nav--closed
       .main-nav__top
         if (currentPage === "index")
           a.main-nav__logo
-            +logo-svg(logoClasses)
+            +logo-svg(logoClasses, logoWidth, logoHeight)
         else
           a.main-nav__logo(href="index.html")
-            +logo-svg(logoClasses)
+            +logo-svg(logoClasses, logoWidth, logoHeight)
 
         button.trigger.main-nav__trigger(type="button")
           span
