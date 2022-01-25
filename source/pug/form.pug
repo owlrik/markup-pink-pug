@@ -2,12 +2,12 @@ extends base/layout
 
 append vars
   -
-   var currentPage = "form"
-   var title = "Pink – Конкурс для пользователей"
-   var hasHeader = true
-   var headerMods = ""
-   var hasFooter = true
-   var footerMods = ""
+    var currentPage = "form"
+    var title = "Pink – Конкурс для пользователей"
+    var hasHeader = true
+    var headerMods = ""
+    var hasFooter = true
+    var footerMods = ""
 
 block main
   main.page-main
@@ -185,4 +185,3 @@ block modals
   .modal
     +formMessage(messageSuccess)(class="form-message--success")
     +formMessage(messageError)(class="form-message--error")
-

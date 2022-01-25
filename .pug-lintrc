@@ -1,0 +1,29 @@
+{
+  "excludeFiles": [
+    "node_modules/**",
+    "source/pug/mixins/basic/img.pug",
+    "source/pug/mixins/basic/picture.pug"
+  ],
+  "validateDivTags": true,
+  "validateAttributeSeparator": {
+    "separator": ", ",
+    "multiLineSeparator": ",\n  "
+  },
+  "validateAttributeQuoteMarks": "\"",
+  "requireSpecificAttributes": [
+    {
+      "img": ["src", "alt"]
+    }
+  ],
+  "requireSpaceAfterCodeOperator": true,
+  "requireStrictEqualityOperators": true,
+  "requireLowerCaseTags": true,
+  "requireLowerCaseAttributes": true,
+  "requireClassLiteralsBeforeIdLiterals": true,
+  "requireClassLiteralsBeforeAttributes": true,
+  "disallowTrailingSpaces": true,
+  "disallowMultipleLineBreaks": true,
+  "disallowSpacesInsideAttributeBrackets": true,
+  "disallowLegacyMixinCall": true,
+  "disallowDuplicateAttributes": true
+}

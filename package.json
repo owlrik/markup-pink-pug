@@ -15,8 +15,9 @@
     "webp": "gulp webp",
     "imagemin": "gulp imagemin",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "puglint": "glob-exec \"source/pug/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\"",
     "editorconfig": "editorconfig-cli",
-    "test": "npm run editorconfig && npm run stylelint"
+    "test": "npm run editorconfig && npm run stylelint && npm run puglint"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -27,6 +28,7 @@
     "cross-env": "^6.0.3",
     "del": "^4.1.1",
     "gh-pages": "^2.2.0",
+    "glob-exec": "^0.1.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-changed": "^4.0.3",
@@ -44,6 +46,7 @@
     "gulp-terser": "^1.4.1",
     "gulp-webp": "^4.0.1",
     "husky": "^4.3.0",
+    "pug-lint": "^2.6.0",
     "stylelint": "^13.7.2",
     "stylelint-config-htmlacademy": "^0.1.4"
   },
@@ -59,7 +62,7 @@
   "editorconfig-cli": [
     "*.json",
     "*.js",
-    "source/*.html",
+    "source/pug/**/*.pug",
     "source/js/**/*.js",
     "source/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
